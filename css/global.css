@@ -1,0 +1,99 @@
+:root {
+    --primary-color: deepskyblue;
+    --secondary-color: deeppink;
+    --dark-gray-color: #333;
+    --light-gray-color: #ddd;
+
+    --poort80-light-blue: #3da8f5;
+    --poort80-dark-blue: #1c374a;
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/fonts/Roboto-Light.woff2);
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Roboto-Regular.woff2);
+}
+
+body {
+    margin: 0;
+    color: var(--dark-gray-color);
+    font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+     font-weight: 300;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--secondary-color);
+}
+
+h1,
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3, 
+h4,
+h5,
+h6 {
+    font-size: 1rem;
+}
+
+li,
+dd {
+    margin-bottom: 5px;
+}
+
+/* Wrapper
+----------------------------------- */
+
+.wrapper {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
