@@ -1,0 +1,28 @@
+dialog {
+    border: none;
+    border-radius: 1rem;
+    padding: 50px;
+    color: white;
+    background: var(--dark-gray-color);
+    animation: modalAnimate .3s;
+}
+
+dialog::backdrop {
+    background-color: rgba(0,0,0,.3);
+    backdrop-filter: blur(4px);
+}
+
+dialog h2 {
+    color: inherit;
+}
+
+@keyframes modalAnimate {
+    from {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
