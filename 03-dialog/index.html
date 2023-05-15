@@ -21,6 +21,7 @@
     <link href="/css/global.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 
+    <script src="dialog.js" defer></script>
     <script src="/js/register-service-worker.js" defer></script>
 </head>
 <body>
@@ -36,17 +37,27 @@
 
             <h2>HTML dialog element</h2>
 
-            <p><button id="openModal">Open dialog</button></p>
-
-            <hr>
-
-            <dialog id="modal">
+            <div><button data-dialog-open="dialog-1">Open dialog 1</button></div>
+            
+            <dialog id="dialog-1">
                 <form method="dialog">
                     <h2>Hi this is a dialog</h2>
 
-                    <button id="closeModal">Close</button>
+                    <button data-dialog-close>Close</button>
                 </form>
             </dialog>
+
+            <div><button data-dialog-open="dialog-2">Open dialog 2</button></div>
+            
+            <dialog id="dialog-2">
+                <form method="dialog">
+                    <h2>Another question for you!</h2>
+
+                    <button data-dialog-close>Close this dialog</button>
+                </form>
+            </dialog>
+
+            <hr>
 
             <p>Reference: Web Dev Simplefied: <a href="https://www.youtube.com/watch?v=ywtkJkxJsdg">YouTube video</a></p>
 
@@ -60,20 +71,6 @@
         <footer>
             <div>&copy; Poort80 Amsterdam, 2023</div>
         </footer>
-    </section>
-
-
-    <script>
-        const modal = document.getElementById("modal");
-        document.getElementById("openModal").addEventListener("click", () => { modal.showModal() });
-        document.getElementById("closeModal").addEventListener("click", () => { modal.close() });
-
-        modal.addEventListener("click", e => {
-            const modalDimensions = modal.getBoundingClientRect();
-            if (e.clientX < modalDimensions.left || e.clientX > modalDimensions.right || e.clientY < modalDimensions.top || e.clientY > modalDimensions.bottom) {
-                modal.close()
-            }
-        })
-    </script>
+    </section>    
 </body>
 </html>
