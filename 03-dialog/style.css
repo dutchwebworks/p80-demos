@@ -1,22 +1,24 @@
+/* Dialog common
+========================================= */
+
 dialog {
     border: none;
     border-radius: 1rem;
     padding: 50px;
-    color: white;
-    background: var(--dark-gray-color);
-    animation: modalAnimate .3s;
+    color: var(--dark-gray-color);
+    background-color: white; 
 }
 
 dialog::backdrop {
-    background-color: rgba(0,0,0,.3);
-    backdrop-filter: blur(4px);
+    background: rgb(20, 20, 20);
+    opacity: .5;
 }
 
 dialog h2 {
     color: inherit;
 }
 
-@keyframes modalAnimate {
+@keyframes animateModalDown {
     from {
         opacity: 0;
         transform: translateY(-80px);
@@ -25,4 +27,69 @@ dialog h2 {
     to {
         opacity: 1;
     }
+}
+
+@keyframes animateModalUp {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Dialog 1
+========================================= */
+
+.dialog1 {
+    animation: animateModalDown .3s;    
+}
+
+.dialog1::backdrop {
+    /* background: var(--poort80-light-blue);     */
+    opacity: .5;
+}
+
+/* Dialog 2
+========================================= */
+
+.dialog2 {    
+    color: var(--poort80-dark-blue);
+    background: white;
+}
+
+.dialog2::backdrop {
+    background: black;
+    opacity: .5;
+    backdrop-filter: blur(8px);
+    background: #333;
+}
+
+/* Dialog 2
+========================================= */
+
+.dialog3 {
+    max-width: 600px;
+    animation: animateModalUp .3s;   
+}
+
+.dialog3::backdrop {
+    background: #3da8f5; 
+    opacity: .5;
+}
+
+/* Buttons
+========================================= */
+
+button {
+    padding: 10px 20px;
+    border: 0;
+    color: white;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    margin-block-end: 20px;
+    cursor: pointer;
+    background-color: var(--secondary-color);
 }
