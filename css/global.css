@@ -97,3 +97,33 @@ dd {
     margin: 0 auto;
     padding: 0 20px;
 }
+
+
+/* Header
+----------------------------------- */
+
+header {
+    border-bottom: 1px solid #aaa;
+    padding-block-end: 10px;
+    margin-block-end: 50px;    
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+header h1 {
+    margin-bottom: 0;
+}
+
+/* Footer
+----------------------------------- */
+
+footer {
+    border-top: 1px solid #aaa;
+    padding-block-start: 10px;
+    margin-block-start: 50px;
+    font-size: 0.8rem;
+    display: flex;
+    color: #aaa;
+    justify-content: space-between;
+}
