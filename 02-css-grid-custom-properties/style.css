@@ -1,3 +1,9 @@
+code {
+    background-color: var(--light-gray-color);
+    display: inline-block;
+    padding: 3px 5px;
+}
+
 .cards {
     display: grid;
     gap: 20px;
@@ -7,5 +13,10 @@
 .card {
     padding: 20px;
     background-color: var(--light-gray-color);
+    border-radius: 10px;
+}
+
+.card img {
+    max-width: 100%;    
     border-radius: 10px;
 }
