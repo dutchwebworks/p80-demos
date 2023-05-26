@@ -108,7 +108,7 @@ header {
     margin-block-end: 50px;    
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-end;
 }
 
 header h1 {

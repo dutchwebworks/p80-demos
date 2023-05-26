@@ -1,0 +1,11 @@
+.cards {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(var(--nr-of-columns, 3), 1fr);
+}
+
+.card {
+    padding: 20px;
+    background-color: var(--light-gray-color);
+    border-radius: 10px;
+}
