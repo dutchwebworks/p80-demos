@@ -81,8 +81,11 @@
                 <h2>Things to keep in mind</h2>
 
                 <uk>
-                    <li>The first CSS file in the HTML-head should tell the browser what layers, and their order, should be</li>
+                    <li>The first CSS file in the HTML-head should tell the browser what layers and what their order should be</li>
                     <li>You can import 2nd or 3rd party CSS (hardcoded, root- or relative URL paths) straight into your own CSS (using <code>@import url(/path/to/css/file.css);</code>) and assign those to a layer</li>
+                    <li>If you happen to use, CSS <code>!important;</code> after your CSS value, that will only work the first time it's been registered.</li>
+                    <li>You can nest CSS Cascade Layers inside CSS Cascade Layers</li>
+                    <li>CSS styles NOT specified inside a <code>@layer {}</code> have a higher speceficity.</li>
                 </uk>
             </section>
         </main>
