@@ -1,3 +1,5 @@
+@layer framework, global, design, utilities;
+
 @layer global {
     :root {
         --primary-color: deepskyblue;
