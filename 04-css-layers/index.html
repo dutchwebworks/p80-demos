@@ -20,7 +20,7 @@
 
     <link href="/css/global.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    
+
     <script src="/js/register-service-worker.js" defer></script>
 </head>
 <body>
@@ -32,7 +32,35 @@
         </header>
 
         <main>
-            
+            <p>Demo of CSS Cascade layers. Different ways of setting layers into your CSS.</p>
+
+<pre>
+<code>@layer global, framework, design;
+
+@layer design {
+    h2 {
+        color: green;
+    }
+}</code>
+</pre>
+
+            <h2 id="heading">Should be deeppink</h2>
+
+            <h3>Should be blue</h3>
+
+            <div class="cards">
+                <div class="card">
+                    <h4 class="card__heading">Should be purple</h4>
+                </div>
+
+                <div class="card">
+                    <h4 class="card__heading">Should be purple</h4>
+                </div>
+
+                <div class="card">
+                    <h4 class="card__heading">Should be purple</h4>
+                </div>
+            </div>
         </main>
 
         <footer>

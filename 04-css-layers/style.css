@@ -1,0 +1,62 @@
+/* Determine the layer order
+---------------------------------- */
+
+@layer global, framework, design;
+
+/* Our own design
+---------------------------------- */
+
+@layer design {
+    h2 {
+        color: var(--secondary-color);
+    }
+
+    /* Card
+    ---------------------------------- */
+
+    .cards {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+        block-size: 200px;
+        padding: 10px;
+        background-color: #eee;
+        border-radius: 10px;
+        place-items: center;
+    }
+
+    .card .card__heading {
+        color: purple;
+    }
+
+    /* Normal
+    ---------------------------------- */
+
+    code {
+        display: block;
+        color: #333;
+        background-color: #eee;
+        padding: 20px;
+        border-radius: 10px;
+    }   
+}
+
+/* Example 3rd party code
+---------------------------------- */
+
+/* @import url(https://bootstrap.com/bootstrap.css) layer(framework); */
+
+@layer framework {
+    h2#heading {
+        color: green;
+    }
+
+    h3 {
+        color: blue;
+        padding-block-end: 10px;
+        border-block-end: 1px solid blue;
+    }
+}
