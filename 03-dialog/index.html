@@ -33,27 +33,33 @@
         </header>
 
         <main>
-            <h2>HTML dialog element</h2>            
+            <h2>HTML dialog element</h2>
+            
+            <p>Easily style different types of dialogs</p>
 
-            <div><button data-dialog-open="dialog1">Open dialog 1</button></div>
+            <div><button class="btn" data-dialog-open="dialog1">Dialog 1: classic dialog</button></div>
             
             <dialog id="dialog1" class="dialog1">
-                <h2>Hi this is a dialog</h2>
+                <button class="btn-close" data-dialog-close>&times;</button>
 
-                <button data-dialog-close>Close</button>
+                <h2>Classic dialog</h2>
+
+                <p>This is a classic dialog with a dimmed backdrop</p>
             </dialog>
 
-            <div><button data-dialog-open="dialog2">Open dialog 2</button></div>
+            <div><button class="btn" data-dialog-open="dialog2">Dialog 2: Blurred backdrop</button></div>
             
             <dialog id="dialog2" class="dialog2">
-                <h2>Another question for you!</h2>
+                <button class="btn-close" data-dialog-close>&times;</button>
 
-                <button data-dialog-close>Close this dialog</button>
+                <h2>Another question for you!</h2>                
             </dialog>
 
-            <div><button data-dialog-open="dialog3">Open dialog 3</button></div>
+            <div><button class="btn" data-dialog-open="dialog3">Dialog 3: Nested dialogs</button></div>
             
             <dialog id="dialog3" class="dialog3">
+                <button class="btn-close" data-dialog-close>&times;</button>
+
                 <h2>Another question for you!</h2>
                 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam exercitationem molestias expedita magnam accusamus delectus eum neque provident? Iure, aperiam!</p>
@@ -62,14 +68,24 @@
 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam exercitationem molestias expedita magnam accusamus delectus eum neque provident? Iure, aperiam!</p>
                 
-                <div><button data-dialog-open="dialog1">Open dialog 1</button></div>
+                <div><button class="btn" data-dialog-open="dialog1">Open dialog 1</button></div>
                 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam exercitationem molestias expedita magnam accusamus delectus eum neque provident? Iure, aperiam!</p>
+            </dialog>
+            
+            <div style="position: relative">
+                <button class="btn" data-dialog-open="dialog4" data-tooltip>Dialog 4: Tooltip like</button>
+                                
+                <dialog id="dialog4" class="dialog4" data-type="tooltip">
+                    <div class="dialog-content">
+                        <p>This is more like toolip</p>
+                        
+                        <button class="btn-close" data-dialog-close>&times;</button>
+                    </div>
+                </dialog>
+            </div>
 
-                <button data-dialog-close>Close this dialog</button>
-            </dialog>            
-
-            <p>Inspired by (reference): Web Dev Simplefied: <a href="https://www.youtube.com/watch?v=ywtkJkxJsdg">YouTube video</a></p>
+            <p>Inspired by (reference): <strong>Web Dev Simplefied</strong> <a href="https://www.youtube.com/watch?v=ywtkJkxJsdg">YouTube video</a></p>
         </main>
         
         <footer>

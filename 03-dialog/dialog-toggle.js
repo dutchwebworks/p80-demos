@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-dialog-open]").forEach((button) => {
     button.addEventListener("click", (event) => {
-      document.getElementById(button.dataset.dialogOpen).showModal();
+      if(event.target.hasAttribute("data-tooltip")) {
+        document.getElementById(button.dataset.dialogOpen).show();
+      } else {
+        document.getElementById(button.dataset.dialogOpen).showModal();
+      }
     });
   });
 

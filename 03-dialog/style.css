@@ -1,9 +1,12 @@
 /* Dialog common
-========================================= */
+----------------------------------------- */
 
-dialog {
+.dialog1,
+.dialog2,
+.dialog3 {
+    position: relative;
     border: none;
-    border-radius: 1rem;
+    border-radius: 8px;
     padding: 50px;
     color: var(--dark-gray-color);
     background-color: white; 
@@ -40,8 +43,23 @@ dialog h2 {
     }
 }
 
+:where(.dialog1, .dialog2, .dialog3) .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+:where(.dialog1, .dialog2, .dialog3, .dialog4) .btn-close {
+    font-size: 2rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background-color: transparent;
+}
+
 /* Dialog 1
-========================================= */
+----------------------------------------- */
 
 .dialog1 {
     animation: animateModalDown .3s;    
@@ -53,11 +71,15 @@ dialog h2 {
 }
 
 /* Dialog 2
-========================================= */
+----------------------------------------- */
 
 .dialog2 {    
-    color: var(--poort80-dark-blue);
-    background: white;
+    color: white;
+    background: #555;
+}
+
+.dialog2 .btn-close {
+    color: white;
 }
 
 .dialog2::backdrop {
@@ -68,7 +90,7 @@ dialog h2 {
 }
 
 /* Dialog 2
-========================================= */
+----------------------------------------- */
 
 .dialog3 {
     max-width: 600px;
@@ -80,10 +102,34 @@ dialog h2 {
     opacity: .5;
 }
 
-/* Buttons
-========================================= */
+/* Dialog 4
+----------------------------------------- */
 
-button {
+.dialog4 {
+    border-radius: 10px;
+    border: none;
+    color: black;
+    margin: 0;
+    background-color: yellow;
+    box-shadow: 0 5px 5px rgba(0,0,0,.25);
+}
+
+.dialog4 .dialog-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+}
+
+.dialog4 p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Buttons
+----------------------------------------- */
+
+.btn {
     padding: 10px 20px;
     border: 0;
     color: white;
