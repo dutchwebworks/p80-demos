@@ -89,6 +89,28 @@ dialog h2 {
     backdrop-filter: blur(8px);
 }
 
+.dialog2 form {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.dialog2 button {
+    margin-block-end: 0;
+}
+
+.dialog2__wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-block-end: 20px;
+}
+
+.dialog2__wrapper .btn {
+    margin-block-end: 0;
+}
+
 /* Dialog 2
 ----------------------------------------- */
 
