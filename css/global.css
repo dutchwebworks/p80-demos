@@ -2,13 +2,17 @@
 
 @layer global {
     :root {
-        --primary-color: deepskyblue;
-        --secondary-color: deeppink;
-        --dark-gray-color: #333;
-        --light-gray-color: #ddd;
-
-        --poort80-light-blue: #3da8f5;
-        --poort80-dark-blue: #1c374a;
+        --clr-primary: deepskyblue;
+        --clr-secondary: deeppink;
+        --clr-lighter: #eee;
+        --clr-light: #aaa;
+        --clr-gray: #595959;
+        --clr-dark: #263238;
+        --clr-p80-light-blue: #3da8f5;
+        --clr-p80-dark-blue: #1c374a;
+        --ff-base: "Roboto", Helvetica, sans-serif;
+        --ff-accent: var(--ff-base);
+        --site-max-width: 768px;
     }
 
     @font-face {
@@ -29,21 +33,11 @@
 
     body {
         margin: 0;
-        color: var(--dark-gray-color);
-        font-family: "Roboto", sans-serif;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    ul,
-    ol,
-    dl {
-        margin-top: 0;
+        font-family: var(--ff-base);
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.75;
+        color: var(--clr-dark);
     }
 
     h1,
@@ -53,60 +47,72 @@
     h5,
     h6 {
         font-weight: 300;
+        line-height: 1.3;
+        font-family: var(--ff-accent);
     }
 
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: var(--secondary-color);
+    :where(h1, h2, h3, h4, h5, h6) a {
+        color: inherit;
     }
 
-    h1,
-    a {
-        color: var(--primary-color);
-    }
-
-    a:hover {
-        color: var(--secondary-color);
+    :where(h1, h2, h3, h4, h5, h6) a:hover {
+        color: var(--clr-secondary);
     }
 
     h1 {
         font-size: 3rem;
+        color: var(--clr-primary);
     }
 
     h2 {
         font-size: 2rem;
+        color: var(--clr-secondary);
     }
-
+    
     h3, 
     h4,
     h5,
     h6 {
+        color: var(--clr-gray);
         font-size: 1rem;
     }
 
-    li,
-    dd {
-        margin-bottom: 5px;
+    h3 {
+        font-size: 1.953rem;
     }
 
-    /* Wrapper
-    ----------------------------------- */
-
-    .wrapper {
-        max-width: 768px;
-        margin: 0 auto;
-        padding: 0 20px;
+    h4 {
+        font-size: 1.563rem;
     }
 
+    h5 {
+        font-size: 1.25rem;
+    }
+
+    h6,
+    small {
+        font-size: 0.8rem;
+    }
+
+    strong,
+    b {
+        font-weight: 700;
+    }
+
+    a {
+        color: var(--clr-p80-light-blue);
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
 
     /* Header
     ----------------------------------- */
 
     header {
-        border-bottom: 1px solid #aaa;
+        border-bottom: 1px solid var(--clr-light);
         padding-block-end: 10px;
         margin-block-end: 50px;    
         display: flex;
@@ -115,20 +121,33 @@
     }
 
     header h1 {
-        margin-bottom: 0;
+        margin-block-end: 0;
     }
 
     /* Footer
     ----------------------------------- */
 
     footer {
-        border-top: 1px solid #aaa;
+        border-top: 1px solid var(--clr-light);
         padding-block-start: 10px;
         margin-block-start: 50px;
         padding-block-end: 50px;
         font-size: 0.8rem;
         display: flex;
-        color: #aaa;
+        color: var(--clr-light);
         justify-content: space-between;
+    }
+
+    /* Wrapper
+    ----------------------------------- */
+
+    .wrapper {
+        margin-inline: auto;
+        padding-inline: 20px;
+        max-width: var(--site-max-width);
+    }
+
+    .flow > * + * {
+        margin-block-start: 0;
     }
 }

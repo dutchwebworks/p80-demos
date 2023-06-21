@@ -1,5 +1,5 @@
 code {
-    background-color: var(--light-gray-color);
+    background-color: var(--clr-lighter);
     display: inline-block;
     padding: 3px 5px;
 }
@@ -12,7 +12,7 @@ code {
 
 .card {
     padding: 20px;
-    background-color: var(--light-gray-color);
+    background-color: var(--clr-lighter);
     border-radius: 10px;
 }
 

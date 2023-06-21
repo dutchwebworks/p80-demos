@@ -22,7 +22,7 @@
 
 @layer design {
     h2 {
-        color: var(--secondary-color);
+        color: var(--clr-secondary);
     }
 
     h3 {
@@ -47,7 +47,7 @@
         display: flex;
         flex-direction: column;
         padding: 10px;
-        background-color: #eee;
+        background-color: var(--clr-lighter);
         border-radius: 10px
     }
 
@@ -67,7 +67,7 @@
     pre code {
         display: block;
         color: #333;
-        background-color: #eee;
+        background-color: var(--clr-lighter);
         padding: 20px;
         border-radius: 10px;
     }   

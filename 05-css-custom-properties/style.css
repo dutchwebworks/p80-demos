@@ -25,16 +25,12 @@ button:hover {
     background-color: var(--color);
 }
 
-.button-2:hover {
-
-}
-
 .button-3 {
     --color: navy;
 }
 
 .button-4 {
-    --color: var(--primary-color);
+    --color: var(--clr-primary);
 }
 
 .button-list {
