@@ -49,14 +49,14 @@
 }
 
 .pwa-banner__instructions {
-    margin: 0;
-    padding-inline: 20px;
+    margin: 0 50px;
     text-align: center;
 }
 
 .pwa-banner_dismiss-button {
     position: absolute;
     inset: 50% 10px auto auto;
+    color: var(--clr-dark);
     transform: translateY(-50%);
     cursor: pointer;
     border: none;

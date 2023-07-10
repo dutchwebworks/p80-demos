@@ -1,9 +1,3 @@
-code {
-    background-color: var(--clr-lighter);
-    display: inline-block;
-    padding: 3px 5px;
-}
-
 .cards {
     display: grid;
     gap: 20px;

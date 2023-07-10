@@ -60,12 +60,12 @@
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: clamp(2rem, -1.2857rem + 11.4286vw, 3rem);
         color: var(--clr-primary);
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: clamp(1.625rem, 1.1964rem + 2.1429vw, 2rem);
         color: var(--clr-secondary);
     }
     
@@ -149,5 +149,11 @@
 
     .flow > * + * {
         margin-block-start: 0;
+    }
+
+    code {
+        background-color: var(--clr-lighter);
+        display: inline-block;
+        padding: 3px 5px;
     }
 }
