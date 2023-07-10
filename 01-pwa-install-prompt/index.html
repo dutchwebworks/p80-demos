@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#3da8f5">
+
+    <title>PWA install prompt</title>
+
+    <meta name="description" content="Storing the PWA install prompt for later use with custom PWA experience">
+
+    <link rel="preload" href="/fonts/Roboto-Light.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="/fonts/Roboto-Regular.woff2" as="font" type="font/woff2">
+
+    <link rel="apple-touch-icon" href="/img/icons/p80-180-180.webp">
+    
+	<link href="app.webmanifest" rel="manifest">
+
+    <link href="/css/global.css" rel="stylesheet">
+    
+    <link href="style.css" rel="stylesheet">
+
+    <script src="install-pwa.js" defer></script>
+
+    <script src="/js/register-service-worker.js" defer></script>
+</head>
+<body>
+    <section class="wrapper">
+        <header>
+            <h1>PWA install prompt</h1>
+
+            <div><a href="/">Back</a></div>
+        </header>
+
+        <main>
+            <p>In a few seconds a <strong>custom build PWA banner</strong> will appear at the bottom of the viewport.</p>
+
+            <h2>Feature check the web browser</h2>
+
+            <ul>
+                <li>If the web browser natively supports installing PWA's this <code>beforeinstallPrompt</code> -event will be saved. And not executed yet.</li>
+                <li>When our custom "Install our PWA app" -button is clicked it will feature test the web browser for this event.</li>
+                <li>If the web browser does support this event the native PWA install prompt will be shown.</li>
+                <li>If the web browser doesn't support this event: an alternative instruction text will be shown.</li>
+                <li>When the PWA is already installed the banner will not be shown again using CSS Media Queries.</li>
+            </ul>       
+
+            <h2>Code examples</h2>
+
+            <p>Please review the <a href="install-pwa.js" target="_blank">install-pwa.js</a> script. And the <a href="style.css" target="_blank">style.css</a> -file on how this works.</p>
+            
+            <section class="pwa-banner" role="alert" aria-live="polite" hidden>
+                <button class="pwa-banner_dismiss-button" title="Close" data-pwa-dismiss>&times;</button>
+                <button class="pwa-banner_install-button" data-pwa-install>Install our PWA app</button>
+                
+                <p class="pwa-banner__instructions" hidden data-pwa-install-instructions>
+                    To install the app look for a "Add to homescreen" or "Install" -button in your web browser
+                </p>
+            </section>
+        </main>
+        
+        <footer>
+            <div>&copy; Dutchwebworks, July 2023</div>
+            <div><a href="https://github.com/dutchwebworks/p80-demos/tree/master/01-pwa-install-prompt" target="_blank">View on Github</a></div>
+        </footer>
+    </section>
+</body>
+</html>
