@@ -8,7 +8,7 @@
     border: none;
     border-radius: 8px;
     padding: 50px;
-    color: var(--dark-gray-color);
+    color: var(--clr-dark);
     background-color: white; 
 }
 
@@ -66,7 +66,7 @@ dialog h2 {
 }
 
 .dialog1::backdrop {
-    /* background: var(--poort80-light-blue);     */
+    /* background: var(--clr-p80-light-blue);     */
     opacity: .5;
 }
 
@@ -75,7 +75,7 @@ dialog h2 {
 
 .dialog2 {    
     color: white;
-    background: #555;
+    background: var(--clr-gray);
 }
 
 .dialog2 .btn-close {
@@ -120,7 +120,7 @@ dialog h2 {
 }
 
 .dialog3::backdrop {
-    background: #3da8f5; 
+    background: #3da8f5; /* Can't use CSS Custom Properties! */
     opacity: .5;
 }
 
@@ -159,5 +159,5 @@ dialog h2 {
     border-radius: 10px;
     margin-block-end: 20px;
     cursor: pointer;
-    background-color: var(--secondary-color);
+    background-color: var(--clr-secondary);
 }
