@@ -1,7 +1,7 @@
 {
-  "name": "astro-latest",
+  "name": "p80-demos",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
