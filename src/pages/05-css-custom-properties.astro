@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "../../public/css/05-css-custom-properties.css";
+
+const title = "CSS Custom Properties";
+const description = "CSS Layers demo";
+const permalink = `${Astro.site.href}05-css-custom-properties`;
+---
+
+<Layout title={title} description={description} permalink={permalink}>
+    <main>
+        <h2>Demo: hover over the buttons</h2>
+
+        <p>Colors change according to <strong>local scoped</strong> CSS Custom Properties</p>
+
+        <div class="button-list">
+            <button class="button-1">Click me!</button>
+            <button class="button-2">Click me!</button>
+            <button style="--color: orange;">Click me!</button>
+            <button class="button-3">Click me!</button>
+            <button class="button-4">Click me!</button>
+        </div>
+
+        <h2>View the stylesheet</h2>
+
+        <p>View this demo's <a href="/css/05-css-custom-properties.css" target="_blank">05-css-custom-properties.css.css</a> -file to grasp the idea of CSS Custom Properties</p>
+
+        <p>Inspired by: Lea Verou's talk  <a href="https://www.youtube.com/watch?v=ZuZizqDF4q8" target="_blank">"CSS Variable Secrets | CSS Day 2022"</a> (YouTube)</p>
+    </main>
+
+    <footer>
+        <div>&copy; Dutchwebworks, May 2023</div>
+        <div><a href="https://github.com/dutchwebworks/p80-demos/tree/master/05-css-custom-properties" target="_blank">View on Github</a></div>
+    </footer>
+    </main>
+</Layout>

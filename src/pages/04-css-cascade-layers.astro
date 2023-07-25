@@ -1,48 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+---
+import Layout from '../layouts/Layout.astro';
+import "../../public/css/04-css-cascade-layers.css";
 
-    <meta name="theme-color" content="#3da8f5"/>
+const title = "CSS Cascade Layers";
+const description = "CSS Layers demo"
+const permalink = `${Astro.site.href}04-css-cascade-layers`;
+---
 
-    <title>CSS Cascade Layers</title>
-
-    <meta name="description" content="CSS Layers demo">
-
-    <link rel="preload" href="/fonts/Roboto-Light.woff2" as="font" type="font/woff2">
-    <link rel="preload" href="/fonts/Roboto-Regular.woff2" as="font" type="font/woff2">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    
-	<link href="/app.webmanifest" rel="manifest">
-
-    <link href="/css/global.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-
-    <script src="/js/register-service-worker.js" defer></script>
-</head>
-<body>
-    <section class="wrapper">
-        <header>
-            <h1>CSS Cascade Layers</h1>
-
-            <div><a href="/">Back</a></div>
-        </header>
-
-        <main class="flow">
-            <p>Demo of CSS Cascade layers. Grouping CSS into layers with specificy order.</p>
+<Layout title={title} description={description} permalink={permalink}>
+    <main>
+        <p>Demo of CSS Cascade layers. Grouping CSS into layers with specificy order.</p>
 
             <h2>Syntax example</h2>
 
-            <p>View this demo's <a href="style.css" target="_blank">style.css</a> file</a></p>
+            <p>View this demo's <a href="/css/04-css-cascade-layers.css" target="_blank">style.css</a> file</a></p>
 
 <pre>
-<code>@layer framework, global, design;
+<!--code>@layer framework, global, design;
 
 @layer design {
     h2 {
@@ -54,7 +28,7 @@
     h2 {
         color: green;
     }
-}</code>
+}</code-->
 </pre>
             <h2 id="heading" class="my-4">Demo's: this heading should be deeppink not green</h2>
             
@@ -92,12 +66,5 @@
                     <li>CSS styles NOT specified inside a <code>@layer {}</code> have a higher speceficity.</li>
                 </ul>
             </section>
-        </main>
-
-        <footer>
-            <div>&copy; Dutchwebworks, May 2023</div>
-            <div><a href="https://github.com/dutchwebworks/p80-demos/tree/master/04-css-cascade-layers" target="_blank">View on Github</a></div>
-        </footer>
-    </section>
-</body>
-</html>
+    </main>
+</Layout>

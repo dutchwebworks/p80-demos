@@ -7,7 +7,7 @@ const description = "Storing the PWA install prompt for later use with custom PW
 const permalink = `${Astro.site.href}01-pwa-install-prompt`;
 ---
 
-<script is:inline src="install-pwa.js"></script>
+<script is:inline src="/js/install-pwa.js"></script>
 
 <Layout title={title} description={description} permalink={permalink}>
     <main>
@@ -21,11 +21,11 @@ const permalink = `${Astro.site.href}01-pwa-install-prompt`;
             <li>If the web browser does support this event the native PWA install prompt will be shown.</li>
             <li>If the web browser doesn't support this event: an alternative instruction text will be shown.</li>
             <li>When the PWA is already installed the banner will not be shown again using CSS Media Queries.</li>
-        </ul>       
+        </ul>
 
         <h2>Code examples</h2>
 
-        <p>Please review the <a href="/js/install-pwa.js" target="_blank">install-pwa.js</a> script. And the <a href="/css/01-pwa-install-prompt.css" target="_blank">style.css</a> -file on how this works.</p>
+        <p>Please review the <a href="/js/install-pwa.js" target="_blank">install-pwa.js</a> script. And the <a href="/css/01-pwa-install-prompt.css" target="_blank">01-pwa-install-prompt.css</a> -file on how this works.</p>
 
         <h2>Test on mobile devices</h2>
 

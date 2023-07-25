@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "../../public/css/02-css-grid-custom-properties.css";
+
+const title = "CSS Grid from inline CSS Custom Properties";
+const description = "Advanced CSS Custom Property demo"
+const permalink = `${Astro.site.href}02-css-grid-custom-properties`;
+---
+
+<Layout title={title} description={description} permalink={permalink}>
+
+    <main>
+        <h2>HTML inline CSS Custom Propertiess</h2>
+
+        <p>
+            The <code>section.cards</code> below has an inline <code>style</code> -attribute with a <strong>CSS Custom Property</strong>: <code>--nr-of-columns: 2;</code>
+            Which dictates the number of columns that will be used by the grid below.
+        </p>
+
+        <p>Open the <strong>developer tools</strong> and change this <code>style</code> -attributes number of columns to see the change.</p>
+
+        <section class="cards" style="--nr-of-columns: 2">
+            <article class="card">
+                <img src="https://fakeimg.pl/300x200/3da8f5/ffffff" width="300" height="200" alt="Placeholder">
+
+                <h2>New movies</h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, necessitatibus.
+                </p>
+
+                <div>
+                    <a href="#">Read more</a>
+                </div>
+            </article>                  
+
+            <article class="card">
+                <img src="https://fakeimg.pl/300x200/3da8f5/ffffff" width="300" height="200" alt="Placeholder">
+
+                <h2>New movies</h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, necessitatibus.
+                </p>
+
+                <div>
+                    <a href="#">Read more</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://fakeimg.pl/300x200/3da8f5/ffffff" width="300" height="200" alt="Placeholder">
+
+                <h2>New movies</h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, necessitatibus.
+                </p>
+
+                <div>
+                    <a href="#">Read more</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://fakeimg.pl/300x200/3da8f5/ffffff" width="300" height="200" alt="Placeholder">
+
+                <h2>New movies</h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, necessitatibus.
+                </p>
+
+                <div>
+                    <a href="#">Read more</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://fakeimg.pl/300x200/3da8f5/ffffff" width="300" height="200" alt="Placeholder">
+
+                <h2>New movies</h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, necessitatibus.
+                </p>
+
+                <div>
+                    <a href="#">Read more</a>
+                </div>
+            </article>
+        </section>
+    </main>
+</Layout>    
