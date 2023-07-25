@@ -1,13 +1,20 @@
 --- 
 interface Props {
     title: string;
+    showBackButton: boolean;
 }
 --- 
 
 <header>
     <h1>{Astro.props.title}</h1>
 
-    <div><a href="/">Back</a></div>
+    {
+        Astro.props.showBackButton && (
+            <div>
+                <a href="/">Back</a>
+            </div>
+        )
+    }    
 </header>
 
 <style is:global>

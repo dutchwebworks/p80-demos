@@ -9,9 +9,10 @@ interface Props {
 	title: string;
     description: string;
     permalink: string;
+    showBackButton: boolean;
 }
 
-const { title, description, permalink } = Astro.props;
+const { title, description, permalink, showBackButton } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -47,7 +48,7 @@ const { title, description, permalink } = Astro.props;
         <slot name="begin-body" />
 
 		<section class="wrapper">
-			<Header title={title} />
+			<Header title={title} showBackButton={showBackButton} />
             
             <slot />
 
