@@ -1,5 +1,13 @@
+--- 
+interface Props {
+    title: string;
+}
+--- 
+
 <header>
-    <h1>Poort80 - Demos</h1>
+    <h1>{Astro.props.title}</h1>
+
+    <div><a href="/">Back</a></div>
 </header>
 
 <style is:global>
