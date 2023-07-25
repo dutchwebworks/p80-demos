@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import "../../public/css/04-css-cascade-layers.css";
 
 const title = "CSS Cascade Layers";
 const description = "CSS Layers demo"
@@ -13,23 +12,8 @@ const permalink = `${Astro.site.href}04-css-cascade-layers`;
 
             <h2>Syntax example</h2>
 
-            <p>View this demo's <a href="/css/04-css-cascade-layers.css" target="_blank">style.css</a> file</a></p>
+            <p>View this demo page's CSS file to get to know the syntax.</p>
 
-<pre>
-<!--code>@layer framework, global, design;
-
-@layer design {
-    h2 {
-        color: deeppink;
-    }
-}
-
-@layer framework {
-    h2 {
-        color: green;
-    }
-}</code-->
-</pre>
             <h2 id="heading" class="my-4">Demo's: this heading should be deeppink not green</h2>
             
             <h3>This cards heading should be blue not deeppink</h3>
@@ -68,3 +52,80 @@ const permalink = `${Astro.site.href}04-css-cascade-layers`;
             </section>
     </main>
 </Layout>
+
+<style is:global>
+/* Determine the layer order
+---------------------------------- */
+
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css) layer(framework);
+
+/* Example 3rd party code
+---------------------------------- */
+
+@layer framework {
+    h2#heading {
+        color: green;
+    }
+
+    h3 {
+        padding-block-end: 10px;
+        border-block-end: 1px solid blue;
+    }
+}
+
+/* Our own design
+---------------------------------- */
+
+@layer design {
+    h2 {
+        color: var(--clr-secondary);
+    }
+
+    h3 {
+        color: blue;
+    }
+
+    .btn-primary {
+        background-color: purple;
+        border-color: purple;
+    }
+
+    /* Card
+    ---------------------------------- */
+
+    .cards {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));   
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        background-color: var(--clr-lighter);
+        border-radius: 10px
+    }
+
+    .card__heading {
+        font-size: 1.5rem;
+        color: purple;
+        margin-block-end: 10px;
+    }
+
+    .card p {
+        margin-block-start: auto;
+    }
+
+    /* Normal
+    ---------------------------------- */
+
+    pre code {
+        display: block;
+        color: #333;
+        background-color: var(--clr-lighter);
+        padding: 20px;
+        border-radius: 10px;
+    }   
+}
+</style>

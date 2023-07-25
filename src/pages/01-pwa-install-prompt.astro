@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import "../../public/css/01-pwa-install-prompt.css";
 
 const title = "PWA install prompt";
 const description = "Storing the PWA install prompt for later use with custom PWA experience"
@@ -25,7 +24,7 @@ const permalink = `${Astro.site.href}01-pwa-install-prompt`;
 
         <h2>Code examples</h2>
 
-        <p>Please review the <a href="/js/install-pwa.js" target="_blank">install-pwa.js</a> script. And the <a href="/css/01-pwa-install-prompt.css" target="_blank">01-pwa-install-prompt.css</a> -file on how this works.</p>
+        <p>Please review the <a href="/js/install-pwa.js" target="_blank">install-pwa.js</a> script. And this page's CSS file on how this works.</p>
 
         <h2>Test on mobile devices</h2>
 
@@ -43,3 +42,74 @@ const permalink = `${Astro.site.href}01-pwa-install-prompt`;
         </section>
     </main>
 </Layout>
+
+<style is:global>
+.pwa-banner {
+    background-color: var(--clr-lighter);
+    padding: 20px;
+    padding: 20px;
+    position: fixed;
+    transform: translateY(0);
+    inset: auto 0 0 0;
+    transition: transform .3s;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, .25);
+}
+
+.pwa-banner[hidden] {
+    transform: translateY(120%);
+}
+
+/* Only show the banner if the web site is running in a normal web browser */
+@media(display-mode: browser) {
+    .pwa-banner {
+        display: flex;
+    }
+}
+
+/* Hide the banner if the PWA is already installed or running in its own window / app shell, see manifest file */
+@media (display-mode: standalone),
+(display-mode: minimal-ui) {
+    .pwa-banner {
+        display: none;
+    }
+}
+
+.pwa-banner_install-button {
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--clr-primary);
+    color: white;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.pwa-banner_install-button:hover {
+    background-color: var(--clr-secondary);
+}
+
+.pwa-banner__instructions {
+    position: relative;
+}
+
+.pwa-banner__instructions {
+    margin: 0 50px;
+    text-align: center;
+}
+
+.pwa-banner_dismiss-button {
+    position: absolute;
+    inset: 50% 10px auto auto;
+    color: var(--clr-dark);
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 2rem;
+    cursor: pointer;
+}
+</style>

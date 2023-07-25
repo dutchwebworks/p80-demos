@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import "../../public/css/02-css-grid-custom-properties.css";
 
 const title = "CSS Grid from inline CSS Custom Properties";
 const description = "Advanced CSS Custom Property demo"
@@ -91,4 +90,25 @@ const permalink = `${Astro.site.href}02-css-grid-custom-properties`;
             </article>
         </section>
     </main>
-</Layout>    
+</Layout>
+
+<style is:global>
+.cards {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(var(--nr-of-columns, 3), 1fr);
+}
+
+.card {
+    padding: 20px;
+    background-color: var(--clr-lighter);
+    border-radius: 10px;
+}
+
+.card img {
+    max-width: 100%; 
+    height: auto;   
+    border-radius: 10px;
+}
+
+</style>
