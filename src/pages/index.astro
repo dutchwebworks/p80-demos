@@ -1,38 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+---
+import Layout from '../layouts/Layout.astro';
+---
 
-    <meta name="theme-color" content="#3da8f5">
-
-    <title>Poort80 - Demos</title>
-
-    <meta name="description" content="Poort80 developer demo's">
-
-    <link rel="preload" href="/fonts/Roboto-Light.woff2" as="font" type="font/woff2">
-    <link rel="preload" href="/fonts/Roboto-Regular.woff2" as="font" type="font/woff2">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    
-	<link href="/app.webmanifest" rel="manifest">
-
-    <link href="/css/global.css" rel="stylesheet">
-
-    <script src="/js/register-service-worker.js" defer></script>
-</head>
-<body>
-    <section class="wrapper">
-        <header>
-            <h1>Poort80 - Demos</h1>
-        </header>
-
-        <main>
-            <h2>List of demo's</h2>
+<Layout title="Poort80 - Demos">
+	<main>
+		<h2>List of demo's</h2>
 
             <ol>
                 <li><a href="/01-pwa-install-prompt">PWA Install prompt</a></li>
@@ -54,11 +26,9 @@
                 <li><a href="https://p80-vue-web-shop.dutchwebworks.nl/" target="_blank">Poort80 Vue Web Shop</a></li>
             </ul>
         </main>
+	</main>
+</Layout>
 
-        <footer>
-            <div>&copy; Dutchwebworks, 2023</div>
-            <div><a href="https://github.com/dutchwebworks/p80-demos" target="_blank">View on Github</a></div>
-        </footer>
-    </section>
-</body>
-</html>
+<style>
+	
+</style>
