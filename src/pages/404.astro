@@ -1,8 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const title = "HTTP 404 Not found";
+const description = "Multiple Poort80 Demos"
+const permalink = `${Astro.site.href}`;
 ---
 
-<Layout title="Poort80 - Demos">
+<Layout title={title} description={description} permalink={permalink}>
 	<main>
 		<h2>Error 404: Not found</h2>
 	</main>

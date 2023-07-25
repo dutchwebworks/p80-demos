@@ -1,8 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const title = "Welcome";
+const description = "Multiple Poort80 Demos";
+const permalink = `${Astro.site.href}`;
 ---
 
-<Layout title="Poort80 - Demos">
+<Layout title={title} description={description} permalink={permalink}>
 	<main>
 		<h2>List of demo's</h2>
 
