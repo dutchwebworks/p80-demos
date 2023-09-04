@@ -1,0 +1,69 @@
+/* View Transition settings
+------------------------------------ */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0, 3s;
+}
+
+/* Regular CSS
+------------------------------------ */
+
+body {
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    padding-block-end: 10px;
+    border-block-end: 2px solid #ccc;
+}
+
+a {
+    color: deepskyblue;
+}
+
+h1 {06-css-view-transition
+    color: deeppink;
+}
+
+figure {
+    margin: 0;
+}
+
+menu {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+menu li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    ;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
+}
+
+.hero {
+    display: flex;
+    gap: 20px;
+    align-self: center;
+}
+
+
+/* View Transition names
+------------------------------------ */
+
+.title {
+    font-size: 2rem;
+    view-transition-name: title;
+}
+
+.thumb {
+    view-transition-name: thumb;
+}

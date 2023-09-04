@@ -22,9 +22,11 @@ const { title, description, permalink, showBackButton } = Astro.props;
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<meta name="theme-color" content="#3da8f5">
+		<slot name="begin-head" />
 
 		<title>{title} - {SITE_TITLE}</title>
+
+		<meta name="theme-color" content="#3da8f5">
 
         <meta name="description" content={description} />
 
@@ -43,6 +45,8 @@ const { title, description, permalink, showBackButton } = Astro.props;
 		<link href="/app.webmanifest" rel="manifest">
 
 		<script src="/js/register-service-worker.js" defer></script>
+
+		<slot name="end-head" />
 	</head>
 	<body>
         <slot name="begin-body" />
