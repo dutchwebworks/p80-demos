@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Accessibile modal";
+const description = "Generic simple accessible modal"
+const permalink = `${Astro.site.href}07-modal/`;
+---
+
+<script is:inline src="/js/modal.js" defer></script>
+
+<Layout title={title} description={description} permalink={permalink} showBackButton="true">
+    <main>
+        <p>Common HTML <code>div</code> -tag based modal / popup. Using <code>aria</code> -attributes and focus management.</p>
+        <!-- Trigger modal button -->
+        <button class="btn btn--primary" aria-haspopup="true" data-modal-open="modal1">Open modal</button>   
+
+        <!-- HTML modal -->
+        <div id="modal1" class="modal" aria-modal="true" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal__backdrop" data-modal-close></div>
+
+            <div class="modal__container">
+                <div class="modal__header">
+                    <h2 id="modal-title" class="modal__title">This is a modal</h2>
+
+                    <div><button class="btn-close" data-modal-close aria-label="Close">&times;</button></div>
+                </div>
+
+                <div class="modal__body" data-modal-focus tabindex="-1">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, nam?</p>
+                    <div><input type="text"></div>
+                </div>
+
+                <div class="modal__footer flex gap-5 ">
+                    <button class="btn btn--secondary" data-modal-close>Cancel</button>
+                    <button class="btn btn--primary" data-modal-close>Confirm</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+
+<style is:global>
+    .modal {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal[aria-hidden] {
+        display: none;
+    }
+
+    .modal__title {
+        margin-block-start: 0;
+    }
+
+    .modal [data-modal-close],
+    .modal button {
+        cursor: pointer;
+    }
+    
+    .modal__backdrop {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(20, 20, 20, .5);
+    }
+    
+    .modal__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        height: 200px;
+        margin-inline: 20px;
+        padding: 50px;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    .modal__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .modal__footer {
+        margin-block-start: auto;
+        display: flex;
+        justify-content: flex-end;
+    }    
+</style>
