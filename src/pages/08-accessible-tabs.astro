@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Accessibile tabs";
+const description = "Generic simple accessible tabs"
+const permalink = `${Astro.site.href}08-accessible-tabs/`;
+---
+
+<script is:inline src="/js/tabs.js" defer></script>
+
+<Layout title={title} description={description} permalink={permalink} showBackButton="true">
+    <main>
+        <section>
+            <nav role="tablist" aria-label="tabs">
+                <button id="tab-one-button" aria-selected="true" aria-controls="tab-one" role="tab">About</button>
+                <button id="tab-two-button" aria-selected="false" aria-controls="tab-two" role="tab">Catalog</button>
+                <button id="tab-three-button" aria-selected="false" aria-controls="tab-three" role="tab">Contact</button>
+            </nav>
+
+            <article id="tab-one" aria-live="polite" role="tabpanel" aria-labelledby="tab-one-button">
+                About lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic necessitatibus iste laborum consequuntur.
+            </article>
+            
+            <article id="tab-two" aria-live="polite" role="tabpanel" aria-labelledby="tab-one-button" aria-hidden="true">
+                Our big catalog. Amet consectetur adipisicing elit. Hic necessitatibus iste laborum consequuntur. Cupiditate consequatur eos deserunt voluptatibus sint minima.
+                Reiciendis labore repellat illo? Eveniet expedita ratione explicabo, quis dolorum quo laudantium.
+            </article>
+            
+            <article id="tab-three" aria-live="polite" role="tabpanel" aria-labelledby="tab-one-button" aria-hidden="true">
+                Contact us. Amet consectetur adipisicing elit. Hic necessitatibus iste laborum consequuntur. Cupiditate consequatur eos deserunt voluptatibus sint minima.
+                Reiciendis labore repellat illo? Eveniet expedita ratione explicabo, quis dolorum quo laudantium. Cupiditate consequatur eos deserunt voluptatibus sint minima.
+                Reiciendis labore repellat illo? Eveniet expedita ratione explicabo, quis dolorum quo laudantium.
+            </article>
+        </section>
+    </main>
+</Layout>
+
+<style is:global>
+[role="tablist"] {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--clr-secondary);
+}
+
+[role="tab"] {
+    border: none;
+    background-color: transparent;
+    color: gray;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+[role="tab"][aria-selected="true"],
+[role="tab"]:hover {
+    color: var(--clr-secondary);
+}
+
+[aria-hidden]:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+</style>
