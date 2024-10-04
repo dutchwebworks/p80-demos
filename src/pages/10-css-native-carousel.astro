@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "CSS native carousel";
+const description = "CSS Native carousel using snap scrolling"
+const permalink = `${Astro.site.href}10-css-native-carousel/`;
+---
+
+<Layout title={title} description={description} permalink={permalink} showBackButton="true">
+    <main>
+        <div class="carousel">
+            <article>
+                <h2>Card 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, sed?</p>
+            </article>
+            
+            <article>
+                <h2>Card 2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, sed?</p>
+            </article>
+
+            <article>
+                <h2>Card 3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, sed?</p>
+            </article>
+
+            <article>
+                <h2>Card 4</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, sed?</p>
+            </article>
+        </div>
+    </main>
+</Layout>
+
+<style is:global>
+.carousel {
+    display: flex;
+    gap: 20px;
+    width: 400px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    padding-block-end: 20px;
+    scrollbar-color: var(--clr-secondary) transparent;
+    scrollbar-width: thin;
+}
+
+.carousel article {
+    scroll-snap-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+    flex-shrink: 0;
+    width: 400px;
+    background-color: var(--clr-lighter);
+    border-radius: 10px;
+    text-align: center;
+}
+</style>
