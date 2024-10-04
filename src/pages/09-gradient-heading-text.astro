@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Gradient heading text";
+const description = "Big heading text with color gradient"
+const permalink = `${Astro.site.href}09-gradient-heading-text/`;
+---
+
+<script is:inline src="/js/install-pwa.js"></script>
+
+<Layout title={title} description={description} permalink={permalink} showBackButton="true">
+    <main>
+        <h2 class="gradient-text gradient-text__one">Gradient heading text</h2>
+        <h2 class="gradient-text gradient-text__two">Subtle heading</h2>
+    </main>
+</Layout>
+
+<style is:global>    
+.gradient-text__one {
+    background: linear-gradient(90deg, var(--clr-secondary), var(--clr-primary));
+}
+
+.gradient-text__two {
+    background: linear-gradient(0deg, var(--clr-p80-dark-blue), var(--clr-p80-light-blue));
+}
+.gradient-text {
+    font-family: sans-serif;
+    font-weight: 8;
+    font-size: 5rem;
+    background-clip: text;
+    color: transparent;
+}
+</style>
