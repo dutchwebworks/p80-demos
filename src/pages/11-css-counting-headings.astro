@@ -1,0 +1,79 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from '../layouts/Layout.astro';
+
+const title = "CSS counting heading";
+const description = "Adding a number in front of headings"
+const permalink = `${Astro.site.href}09-css-counting-headings/`;
+---
+
+<Layout title={title} description={description} permalink={permalink} showBackButton="true">
+    <main>
+        <h2>Counting heading</h2>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dolor labore magni minima quia iusto provident, placeat illo aut voluptas.</p>
+        
+        <h2>Another heading</h2>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dolor labore magni minima quia iusto provident, placeat illo aut voluptas.</p>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dolor labore magni minima quia iusto provident, placeat illo aut voluptas.</p>
+        
+        <h2>Why not another heading?</h2>
+
+        <p>Placeat illo aut voluptas.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, commodi voluptatem? Consectetur esse illum rem sit cum facere voluptatibus ipsum cumque placeat magni. Odio odit, dolorum atque minima vitae officiis omnis enim ad aperiam ipsam fugit, dolores molestiae veritatis sapiente.</p>
+
+        <h2>How it works</h2>
+
+        
+
+<code style="display: block;padding-inline:20px;border-radius: 10px;">
+<pre>
+:root &#x2774;
+    counter-reset: headings;
+&#10101;
+
+h2 &#x2774;
+    counter-increment: headings;
+&#10101;
+
+h2::before &#x2774;
+    content: counter(headings); 
+&#10101;
+</pre>
+</code>
+
+        <p>And add a bit of CSS styling.</p>
+    </main>       
+</Layout>
+
+<style is:global>   
+:root {
+    counter-reset: headings;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    counter-increment: headings;
+}
+
+h2::before {
+    content: counter(headings);
+    background-color: var(--clr-primary);
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 22px;    
+    text-align: center;
+}
+</style>
