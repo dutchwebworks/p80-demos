@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ExternalDemoList from '../components/ExternalDemoList.astro';
+import PagesList from '../components/PagesList.astro';
 
 const title = "Poort80 - Demos";
 const description = "Multiple Poort80 Demos";
@@ -10,74 +12,10 @@ const permalink = `${Astro.site.href}`;
 	<main>
 		<h2>List of demo's</h2>
 
-            <ol class="demos">
-                <li><a href="/01-pwa-install-prompt">PWA Install prompt</a></li>
-                <li><a href="/02-css-grid-custom-properties">CSS Grid from inline CSS Custom Properties</a></li>
-                <li><a href="/03-dialog">HTML dialog element</a></li>
-                <li><a href="/04-css-cascade-layers">CSS Cascade Layers</a></li>
-                <li><a href="/05-css-custom-properties">CSS Custom Properties</a></li>
-                <li><a href="/06-css-view-transition">CSS View Transition</a></li>
-                <li><a href="/07-accessible-modal">Accessible Modal</a></li>
-                <li><a href="/08-accessible-tabs">Accessible Tabs</a></li>
-                <li><a href="/09-gradient-heading-text">Gradient heading text</a></li>
-                <li><a href="/10-css-native-carousel">CSS native carousel</a></li>
-                <li><a href="/11-css-counting-headings">CSS counting headings</a></li>
-            </ol>
+        <PagesList />
 
-            <h2>List of external demo's</h2>
-            
-            <ul>
-                <li><a href="https://vue-custom-element-learning.dutchwebworks.nl" target="_blank">Poort80 Vue Custom Element</a></li>
-                <li><a href="https://css-container-queries-learning.dutchwebworks.nl/" target="_blank">CSS Container Queries</a>, and <a href="https://docs.google.com/presentation/d/1VScY4NnYEphfFcMi4Svlo4xYur9zukvZpcZbB7ZnQrc/edit?usp=sharing" target="_blank">presentation</a></li>
-                <li><a href="https://p80-css-grid-demos.dutchwebworks.nl/" target="_blank">Poort80 CSS Grid demos</a>, and <a href="https://docs.google.com/presentation/d/e/2PACX-1vS3_1Xvt2icevSlgI-xQjVLg8N-JRI8w1M0z8AhhdsgLGGlmJufReNZ-ERXw4lfARtpT7868g1Mklgo/pub?start=false&loop=false&delayms=60000" target="_blank">presentation</a></li>
-                <li><a href="https://css-grid-learning.dutchwebworks.nl/" target="_blank">CSS Grid Learning</a></li>
-                <li><a href="https://pwa-learning.dutchwebworks.nl/" target="_blank">PWA Learning</a></li>
-                <li><a href="https://vue-learning.dutchwebworks.nl/" target="_blank">Vue Learning</a></li>
-                <li><a href="https://vue-web-component-demo.dutchwebworks.nl/" target="_blank">VueJS 2 Web-component</a></li>
-                <li><a href="https://responsive-images-learning.dutchwebworks.nl/" target="_blank">Responsive Images</a></li>
-                <li><a href="https://p80-vue-web-shop.dutchwebworks.nl/" target="_blank">Poort80 Vue Web Shop</a></li>
-                <li><a href="https://css-logical-properties-language-change.dutchwebworks.nl/" target="_blank">CSS Logical Properties - Language Change</a></li>
-                <li><a href="https://speculative-navigation-learning.dutchwebworks.nl/" target="_blank">Speculative Navigation</a></li>
-                <li><a href="https://web-push-notification-learning.dutchwebworks.nl/" target="_blank">Web Push Notification Learning</a></li>
-            </ul>
-        </main>
+        <h2>List of external demo's</h2>
+
+        <ExternalDemoList />
 	</main>
 </Layout>
-
-<style>
-.demos {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-}
-
-.demos a {
-    padding: 20px;
-    background-color: var(--clr-primary);
-    border-radius: 10px;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1rem; 
-    line-height: 1.6;
-    transition: background-color .3s, font-size .3s;
-}
-
-@media(min-width: 380px) {
-    .demos a {
-        aspect-ratio: 1 / 1;
-    }
-}
-
-.demos a:hover {
-    font-size: 1.15rem;
-    background-color: var(--clr-secondary);
-}
-</style>

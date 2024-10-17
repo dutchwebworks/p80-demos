@@ -1,0 +1,51 @@
+---
+import list from '../content/lists/Pages.json';
+---
+
+<ol class="demos">
+{
+    list.map(({label, url}) => (
+        <li>
+            <a href={url}>{label}</a>                
+        </li>
+    ))
+}
+</ol>
+
+<style>
+.demos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.demos a {
+    padding: 20px;
+    background-color: var(--clr-primary);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem; 
+    line-height: 1.6;
+    transition: background-color .3s, font-size .3s;
+}
+
+@media(min-width: 380px) {
+    .demos a {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+.demos a:hover {
+    font-size: 1.15rem;
+    background-color: var(--clr-secondary);
+}
+</style>
