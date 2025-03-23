@@ -1,9 +1,9 @@
---- 
+---
 interface Props {
     title: string;
     showBackButton: boolean;
 }
---- 
+---
 
 <header>
     <h1>{Astro.props.title}</h1>
@@ -14,20 +14,20 @@ interface Props {
                 <a href="/">Back</a>
             </div>
         )
-    }    
+    }
 </header>
 
 <style is:global>
-header {
-    border-bottom: 1px solid var(--clr-light);
-    padding-block-end: 10px;
-    margin-block-end: 50px;    
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
+    header {
+        border-bottom: 1px solid var(--clr-light);
+        padding-block-end: 10px;
+        margin-block-end: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
 
-header h1 {
-    margin-block-end: 0;
-}    
+    header h1 {
+        margin-block-end: 0;
+    }
 </style>

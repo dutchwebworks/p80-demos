@@ -68,8 +68,8 @@
         font-size: clamp(1.625rem, 1.1964rem + 2.1429vw, 2rem);
         color: var(--clr-secondary);
     }
-    
-    h3, 
+
+    h3,
     h4,
     h5,
     h6 {
@@ -129,7 +129,7 @@
         margin-block-end: 20px;
         cursor: pointer;
     }
-    
+
     .btn--primary {
         background-color: var(--clr-primary);
     }

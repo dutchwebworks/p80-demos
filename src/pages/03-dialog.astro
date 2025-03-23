@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 const title = "HTML dialog element";
-const description = "CSS dialog demo for Poort80"
+const description = "CSS dialog demo for Poort80";
 const permalink = `${Astro.site.href}03-dialog/`;
 ---
 
@@ -11,11 +11,11 @@ const permalink = `${Astro.site.href}03-dialog/`;
 <Layout title={title} description={description} permalink={permalink} showBackButton="true">
     <main>
         <h2>HTML dialog element</h2>
-            
+
         <p>Easily style different types of dialogs</p>
 
         <div><button class="btn" data-dialog-open="dialog1">Dialog 1: classic dialog</button></div>
-        
+
         <dialog id="dialog1" class="dialog1">
             <button class="btn-close" value="dismiss" data-dialog-close>&times;</button>
 
@@ -28,45 +28,56 @@ const permalink = `${Astro.site.href}03-dialog/`;
             <button class="btn" data-dialog-open="dialog2">Dialog 2: Blurred backdrop</button>
             <code id="dialog2ReturnValue"></code>
         </div>
-        
+
         <dialog id="dialog2" class="dialog2">
             <button class="btn-close" value="dismiss" data-dialog-close>&times;</button>
 
             <h2>Different style and return a dialog value</h2>
 
             <p>Return a value when closing this dialog</p>
-            
+
             <form>
-                <button class="btn" value="cancel" formmethod="dialog">Cancel</button><!-- Will also close this dialog without submitting the form, `formmethod="dialog"` triggers a close event -->
+                <button class="btn" value="cancel" formmethod="dialog">
+                    Cancel
+                </button><!-- Will also close this dialog without submitting the form, `formmethod="dialog"` triggers a close event -->
                 <button class="btn" value="confirm" id="dialog2ConfirmButton">Confirm</button>
-            </form>                
+            </form>
         </dialog>
 
         <div><button class="btn" data-dialog-open="dialog3">Dialog 3: Nested dialogs</button></div>
-        
+
         <dialog id="dialog3" class="dialog3">
             <button class="btn-close" value="dismiss" data-dialog-close>&times;</button>
 
             <h2>Another question for you!</h2>
-            
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam exercitationem molestias expedita magnam accusamus delectus eum neque provident? Iure, aperiam!</p>
-            
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam exercitationem molestias expedita magnam accusamus delectus eum neque
+                provident? Iure, aperiam!
+            </p>
+
             <h3>Some sub-heading</h3>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam exercitationem molestias expedita magnam accusamus delectus eum neque provident? Iure, aperiam!</p>
-            
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam exercitationem molestias expedita magnam accusamus delectus eum neque
+                provident? Iure, aperiam!
+            </p>
+
             <div><button class="btn" data-dialog-open="dialog1">Open dialog 1</button></div>
-            
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam exercitationem molestias expedita magnam accusamus delectus eum neque provident? Iure, aperiam!</p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam exercitationem molestias expedita magnam accusamus delectus eum neque
+                provident? Iure, aperiam!
+            </p>
         </dialog>
-        
+
         <div style="position: relative">
             <button class="btn" data-dialog-open="dialog4" data-tooltip>Dialog 4: Tooltip like</button>
-                            
+
             <dialog id="dialog4" class="dialog4" data-type="tooltip">
                 <div class="dialog-content">
                     <p>This is more like toolip</p>
-                    
+
                     <button class="btn-close" value="dismiss" data-dialog-close>&times;</button>
                 </div>
             </dialog>
@@ -77,164 +88,164 @@ const permalink = `${Astro.site.href}03-dialog/`;
 </Layout>
 
 <style is:global>
-.dialog1,
-.dialog2,
-.dialog3 {
-    position: relative;
-    border: none;
-    border-radius: 8px;
-    padding: 50px;
-    color: var(--clr-dark);
-    background-color: white; 
-}
-
-dialog::backdrop {
-    background: rgb(20, 20, 20);
-    opacity: .5;
-}
-
-dialog h2 {
-    color: inherit;
-}
-
-@keyframes animateModalDown {
-    from {
-        opacity: 0;
-        transform: translateY(-80px);
+    .dialog1,
+    .dialog2,
+    .dialog3 {
+        position: relative;
+        border: none;
+        border-radius: 8px;
+        padding: 50px;
+        color: var(--clr-dark);
+        background-color: white;
     }
 
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes animateModalUp {
-    from {
-        opacity: 0;
-        transform: translateY(80px);
+    dialog::backdrop {
+        background: rgb(20, 20, 20);
+        opacity: 0.5;
     }
 
-    to {
-        opacity: 1;
+    dialog h2 {
+        color: inherit;
     }
-}
 
-:where(.dialog1, .dialog2, .dialog3) .btn-close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-}
+    @keyframes animateModalDown {
+        from {
+            opacity: 0;
+            transform: translateY(-80px);
+        }
 
-:where(.dialog1, .dialog2, .dialog3, .dialog4) .btn-close {
-    font-size: 2rem;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    background-color: transparent;
-}
+        to {
+            opacity: 1;
+        }
+    }
 
-/* Dialog 1
+    @keyframes animateModalUp {
+        from {
+            opacity: 0;
+            transform: translateY(80px);
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    :where(.dialog1, .dialog2, .dialog3) .btn-close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    :where(.dialog1, .dialog2, .dialog3, .dialog4) .btn-close {
+        font-size: 2rem;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    /* Dialog 1
 ----------------------------------------- */
 
-.dialog1 {
-    animation: animateModalDown .3s;    
-}
+    .dialog1 {
+        animation: animateModalDown 0.3s;
+    }
 
-.dialog1::backdrop {
-    /* background: var(--clr-p80-light-blue);     */
-    opacity: .5;
-}
+    .dialog1::backdrop {
+        /* background: var(--clr-p80-light-blue);     */
+        opacity: 0.5;
+    }
 
-/* Dialog 2
+    /* Dialog 2
 ----------------------------------------- */
 
-.dialog2 {    
-    color: white;
-    background: var(--clr-gray);
-}
+    .dialog2 {
+        color: white;
+        background: var(--clr-gray);
+    }
 
-.dialog2 .btn-close {
-    color: white;
-}
+    .dialog2 .btn-close {
+        color: white;
+    }
 
-.dialog2::backdrop {
-    background: black;
-    opacity: .5;
-    background: rgba(0,0,0,.25);
-    backdrop-filter: blur(8px);
-}
+    .dialog2::backdrop {
+        background: black;
+        opacity: 0.5;
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(8px);
+    }
 
-.dialog2 form {
-    display: flex;
-    width: 100%;
-    gap: 20px;
-    justify-content: flex-end;
-}
+    .dialog2 form {
+        display: flex;
+        width: 100%;
+        gap: 20px;
+        justify-content: flex-end;
+    }
 
-.dialog2 button {
-    margin-block-end: 0;
-}
+    .dialog2 button {
+        margin-block-end: 0;
+    }
 
-.dialog2__wrapper {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    margin-block-end: 20px;
-}
+    .dialog2__wrapper {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-block-end: 20px;
+    }
 
-.dialog2__wrapper .btn {
-    margin-block-end: 0;
-}
+    .dialog2__wrapper .btn {
+        margin-block-end: 0;
+    }
 
-/* Dialog 2
+    /* Dialog 2
 ----------------------------------------- */
 
-.dialog3 {
-    max-width: 600px;
-    animation: animateModalUp .3s;   
-}
+    .dialog3 {
+        max-width: 600px;
+        animation: animateModalUp 0.3s;
+    }
 
-.dialog3::backdrop {
-    background: #3da8f5; /* Can't use CSS Custom Properties! */
-    opacity: .5;
-}
+    .dialog3::backdrop {
+        background: #3da8f5; /* Can't use CSS Custom Properties! */
+        opacity: 0.5;
+    }
 
-/* Dialog 4
+    /* Dialog 4
 ----------------------------------------- */
 
-.dialog4 {
-    border-radius: 10px;
-    border: none;
-    color: black;
-    margin: 0;
-    background-color: yellow;
-    box-shadow: 0 5px 5px rgba(0,0,0,.25);
-}
+    .dialog4 {
+        border-radius: 10px;
+        border: none;
+        color: black;
+        margin: 0;
+        background-color: yellow;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+    }
 
-.dialog4 .dialog-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 0 10px;
-}
+    .dialog4 .dialog-content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 10px;
+    }
 
-.dialog4 p {
-    margin: 0;
-    padding: 0;
-}
+    .dialog4 p {
+        margin: 0;
+        padding: 0;
+    }
 
-/* Buttons
+    /* Buttons
 ----------------------------------------- */
 
-.btn {
-    padding: 10px 20px;
-    border: 0;
-    color: white;
-    font-size: 1.4rem;
-    border-radius: 10px;
-    margin-block-end: 20px;
-    cursor: pointer;
-    background-color: var(--clr-secondary);
-}
+    .btn {
+        padding: 10px 20px;
+        border: 0;
+        color: white;
+        font-size: 1.4rem;
+        border-radius: 10px;
+        margin-block-end: 20px;
+        cursor: pointer;
+        background-color: var(--clr-secondary);
+    }
 </style>

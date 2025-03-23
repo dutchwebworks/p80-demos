@@ -1,7 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ExternalDemoList from '../components/ExternalDemoList.astro';
-import PagesList from '../components/PagesList.astro';
+import Layout from "../layouts/Layout.astro";
+import ExternalDemoList from "../components/ExternalDemoList.astro";
+import PagesList from "../components/PagesList.astro";
 
 const title = "Poort80 - Demos";
 const description = "Multiple Poort80 Demos";
@@ -9,13 +9,13 @@ const permalink = `${Astro.site.href}`;
 ---
 
 <Layout title={title} description={description} permalink={permalink}>
-	<main>
-		<h2>List of demo's</h2>
+    <main>
+        <h2>List of demo's</h2>
 
         <PagesList />
 
         <h2>List of external demo's</h2>
 
         <ExternalDemoList />
-	</main>
+    </main>
 </Layout>

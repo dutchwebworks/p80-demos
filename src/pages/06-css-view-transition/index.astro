@@ -1,7 +1,7 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Head from '../../components/06-css-view-transition/Head.astro';
-import Header from '../../components/06-css-view-transition/Header.astro';
+import Layout from "../../layouts/Layout.astro";
+import Head from "../../components/06-css-view-transition/Head.astro";
+import Header from "../../components/06-css-view-transition/Header.astro";
 
 import "../../styles/06-css-view-transition.css";
 
@@ -16,40 +16,57 @@ const permalink = `${Astro.site.href}06-css-view-transition/`;
     <main>
         <section>
             <Header />
-                
+
             <article>
                 <h2>Intro</h2>
 
-                <p>Requirements: a browser that supports the <a href="https://caniuse.com/view-transitions" target="_blank">View Transition API</a></p>
-                
+                <p>
+                    Requirements: a browser that supports the <a href="https://caniuse.com/view-transitions" target="_blank">View Transition API</a>
+                </p>
+
                 <p>This is a very basic demo of using (CSS) View Transition API in full page transition.</p>
 
-                <p>When navigation from the <strong>Home</strong> to the <strong>Speed</strong> -page, a page's title and hero image will animate between them.</p>
+                <p>
+                    When navigation from the <strong>Home</strong> to the <strong>Speed</strong> -page, a page's title and hero image will animate between
+                    them.
+                </p>
 
                 <figure class="hero">
-                    <img src="/img/speed.jpeg" class="thumb" alt="Speed" width="200">
+                    <img src="/img/speed.jpeg" class="thumb" alt="Speed" width="200" />
 
                     <figcaption><a href="/06-css-view-transition/speed" class="title">Speed of our product</a></figcaption>
-                </figure>            
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus deleniti illo molestias soluta iusto voluptatem aspernatur dolor nostrum. Unde, culpa!</p>
+                </figure>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus deleniti illo molestias soluta iusto voluptatem aspernatur
+                    dolor nostrum. Unde, culpa!
+                </p>
 
                 <hr style="margin-block: 60px" />
 
                 <h2>Browser support</h2>
 
-                <p>As of this writing only Chromium web browser (Chrome, Edge, Opera and Chrome for Android), with a experimental flag enabled, are supporting this new feature.</p>
+                <p>
+                    As of this writing only Chromium web browser (Chrome, Edge, Opera and Chrome for Android), with a experimental flag enabled, are
+                    supporting this new feature.
+                </p>
 
                 <h2>Enabling View Transition API in Chrome (Chromium)</h2>
 
                 <ul>
                     <li>Open Chrome</li>
                     <li>In the address bar type: <code>chrome://flags/</code></li>
-                    <li>In the search bar type: <code>viewTransition</code>, two items will be shown: <strong>viewTransition API</strong> and <strong>viewTransition API for navigations</strong></li>
+                    <li>
+                        In the search bar type: <code>viewTransition</code>, two items will be shown: <strong>viewTransition API</strong> and <strong>
+                            viewTransition API for navigations
+                        </strong>
+                    </li>
                     <li>"Enable" both and click the <strong>"Relaunch"</strong> -button</li>
                 </ul>
 
-                <p>Check <a href="https://caniuse.com/view-transitions" target="_blank">caniuse.com/view-transitions</a> for current web browser support.</p>
+                <p>
+                    Check <a href="https://caniuse.com/view-transitions" target="_blank">caniuse.com/view-transitions</a> for current web browser support.
+                </p>
 
                 <h2>More demo's</h2>
 
@@ -61,13 +78,15 @@ const permalink = `${Astro.site.href}06-css-view-transition/`;
                 </ul>
 
                 <h2>Blog's</h2>
-                
-                <p><a href="https://www.maxiferreira.com/blog/astro-page-transitions/" target="_blank">https://www.maxiferreira.com/blog/astro-page-transitions/</a></p>
+
+                <p>
+                    <a href="https://www.maxiferreira.com/blog/astro-page-transitions/" target="_blank">
+                        https://www.maxiferreira.com/blog/astro-page-transitions/
+                    </a>
+                </p>
             </article>
         </section>
     </main>
 </Layout>
 
-<style is:global>
-
-</style>
+<style is:global></style>

@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 const title = "Gradient heading text";
-const description = "Big heading text with color gradient"
+const description = "Big heading text with color gradient";
 const permalink = `${Astro.site.href}09-gradient-heading-text/`;
 ---
 
@@ -11,32 +11,31 @@ const permalink = `${Astro.site.href}09-gradient-heading-text/`;
         <h2 class="gradient-text gradient-text__one">Gradient heading text</h2>
         <h2 class="gradient-text gradient-text__two">Subtle heading</h2>
 
-        
         <code style="display: block;padding-inline:20px;border-radius: 10px;">
-<pre>
+            <pre>
 h2 &#x2774;
     background: linear-gradient(90deg, deeppink, deepskyblue);
     background-clip: text;
     color: transparent;
 &#10101;
 </pre>
-        </code>        
+        </code>
     </main>
 </Layout>
 
-<style is:global>    
-.gradient-text__one {
-    background: linear-gradient(90deg, var(--clr-secondary), var(--clr-primary));
-}
+<style is:global>
+    .gradient-text__one {
+        background: linear-gradient(90deg, var(--clr-secondary), var(--clr-primary));
+    }
 
-.gradient-text__two {
-    background: linear-gradient(0deg, var(--clr-p80-dark-blue), var(--clr-p80-light-blue));
-}
-.gradient-text {
-    font-family: sans-serif;
-    font-weight: 8;
-    font-size: 5rem;
-    background-clip: text;
-    color: transparent;
-}
+    .gradient-text__two {
+        background: linear-gradient(0deg, var(--clr-p80-dark-blue), var(--clr-p80-light-blue));
+    }
+    .gradient-text {
+        font-family: sans-serif;
+        font-weight: 8;
+        font-size: 5rem;
+        background-clip: text;
+        color: transparent;
+    }
 </style>

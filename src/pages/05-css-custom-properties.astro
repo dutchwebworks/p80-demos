@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 const title = "CSS Custom Properties";
 const description = "CSS Layers demo";
@@ -24,50 +24,57 @@ const permalink = `${Astro.site.href}05-css-custom-properties/`;
 
         <p>View this demo page's CSS to grasp the idea of CSS Custom Properties</p>
 
-        <p>Inspired by: Lea Verou's talk  <a href="https://www.youtube.com/watch?v=ZuZizqDF4q8" target="_blank">"CSS Variable Secrets | CSS Day 2022"</a> (YouTube)</p>
+        <p>
+            Inspired by: Lea Verou's talk <a href="https://www.youtube.com/watch?v=ZuZizqDF4q8" target="_blank">
+                "CSS Variable Secrets | CSS Day 2022"
+            </a> (YouTube)
+        </p>
     </main>
 </Layout>
 
 <style is:global>
-button {
-    --_color: var(--color, black);
-    color: var(--_color);
-    border: 3px solid var(--_color);
+    button {
+        --_color: var(--color, black);
+        color: var(--_color);
+        border: 3px solid var(--_color);
 
-    padding: 10px 20px;
-    font-size: 1.4rem;
-    border-radius: 10px;
-    margin-block-end: 20px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    background-color: transparent;
-    transition: color .3s, border .3s;
-}
+        padding: 10px 20px;
+        font-size: 1.4rem;
+        border-radius: 10px;
+        margin-block-end: 20px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        background-color: transparent;
+        transition:
+            color 0.3s,
+            border 0.3s;
+    }
 
-button:hover {
-    color: white;
-    background-color: var(--_color);
-    transition: background-color .3s, color .3s;
-}
+    button:hover {
+        color: white;
+        background-color: var(--_color);
+        transition:
+            background-color 0.3s,
+            color 0.3s;
+    }
 
-.button-2 {
-    --color: #F06;
-    color: white;
-    background-color: var(--color);
-}
+    .button-2 {
+        --color: #f06;
+        color: white;
+        background-color: var(--color);
+    }
 
-.button-3 {
-    --color: navy;
-}
+    .button-3 {
+        --color: navy;
+    }
 
-.button-4 {
-    --color: var(--clr-primary);
-}
+    .button-4 {
+        --color: var(--clr-primary);
+    }
 
-.button-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 30px;    
-}
-
+    .button-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 30px;
+    }
 </style>

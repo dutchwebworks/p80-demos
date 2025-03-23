@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 const title = "Accessibile modal";
-const description = "Generic simple accessible modal"
+const description = "Generic simple accessible modal";
 const permalink = `${Astro.site.href}07-accessible-modal/`;
 ---
 
@@ -12,7 +12,7 @@ const permalink = `${Astro.site.href}07-accessible-modal/`;
     <main>
         <p>Common HTML <code>div</code> -tag based modal / popup. Using <code>aria</code> -attributes and focus management.</p>
         <!-- Trigger modal button -->
-        <button class="btn btn--primary" aria-haspopup="true" data-modal-open="modal1">Open modal</button>   
+        <button class="btn btn--primary" aria-haspopup="true" data-modal-open="modal1">Open modal</button>
 
         <!-- HTML modal -->
         <div id="modal1" class="modal" aria-modal="true" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
@@ -27,10 +27,10 @@ const permalink = `${Astro.site.href}07-accessible-modal/`;
 
                 <div class="modal__body" data-modal-focus tabindex="-1">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, nam?</p>
-                    <div><input type="text"></div>
+                    <div><input type="text" /></div>
                 </div>
 
-                <div class="modal__footer flex gap-5 ">
+                <div class="modal__footer flex gap-5">
                     <button class="btn btn--secondary" data-modal-close>Cancel</button>
                     <button class="btn btn--primary" data-modal-close>Confirm</button>
                 </div>
@@ -38,7 +38,6 @@ const permalink = `${Astro.site.href}07-accessible-modal/`;
         </div>
     </main>
 </Layout>
-
 
 <style is:global>
     .modal {
@@ -61,13 +60,13 @@ const permalink = `${Astro.site.href}07-accessible-modal/`;
     .modal button {
         cursor: pointer;
     }
-    
+
     .modal__backdrop {
         position: fixed;
         inset: 0;
-        background-color: rgba(20, 20, 20, .5);
+        background-color: rgba(20, 20, 20, 0.5);
     }
-    
+
     .modal__container {
         position: relative;
         display: flex;
@@ -89,5 +88,5 @@ const permalink = `${Astro.site.href}07-accessible-modal/`;
         margin-block-start: auto;
         display: flex;
         justify-content: flex-end;
-    }    
+    }
 </style>
