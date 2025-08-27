@@ -1,45 +1,56 @@
 [
     {
+        "id": 1,
         "label": "PWA Install prompt",
         "url": "/01-pwa-install-prompt"
     },
     {
+        "id": 2,
         "label": "CSS Grid from inline CSS Custom Properties",
         "url": "/02-css-grid-custom-properties"
     },
     {
+        "id": 3,
         "label": "HTML dialog element",
         "url": "/03-dialog"
     },
     {
+        "id": 4,
         "label": "CSS Cascade Layers",
         "url": "/04-css-cascade-layers"
     },
     {
+        "id": 5,
         "label": "CSS Custom Properties",
         "url": "/05-css-custom-properties"
     },
     {
+        "id": 6,
         "label": "CSS View Transition",
         "url": "/06-css-view-transition"
     },
     {
+        "id": 7,
         "label": "Accessible Modal",
         "url": "/07-accessible-modal"
     },
     {
+        "id": 8,
         "label": "Accessible Tabs",
         "url": "/08-accessible-tabs"
     },
     {
+        "id": 9,
         "label": "Gradient heading text",
         "url": "/09-gradient-heading-text"
     },
     {
+        "id": 10,
         "label": "CSS native carousel",
         "url": "/10-css-native-carousel"
     },
     {
+        "id": 11,
         "label": "CSS counting headings",
         "url": "/11-css-counting-headings"
     }
