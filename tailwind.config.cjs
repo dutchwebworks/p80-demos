@@ -1,11 +1,12 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-    content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+import { defineConfig } from 'tailwindcss';
+
+export default defineConfig({
+    content: [
+        './src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}',
+        './public/**/*.html',
+    ],
     theme: {
         extend: {},
     },
     plugins: [],
-    corePlugins: {
-        preflight: false,
-    },
-};
+});
