@@ -8,7 +8,7 @@ const permalink = `${Astro.site.href}07-accessible-modal/`;
 
 <script is:inline src="/js/modal.js" defer></script>
 
-<Layout title={title} description={description} permalink={permalink} showBackButton="true">
+<Layout title={title} description={description} permalink={permalink} showBackButton={true}>
     <main>
         <p>Common HTML <code>div</code> -tag based modal / popup. Using <code>aria</code> -attributes and focus management.</p>
         <!-- Trigger modal button -->
