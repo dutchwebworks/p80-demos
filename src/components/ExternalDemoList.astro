@@ -1,16 +1,23 @@
 ---
-import list from '../content/lists/ExternalDemos.json';
+import list from "../content/lists/ExternalDemos.json";
 ---
 
 <ul>
-{
-    list.map(({label, url, presentation}) => (
-        <li>
-            <a href={url} target="_blank">{label}</a>            
-            {
-                presentation && <Fragment>, and </Fragment><a href={presentation} target="_blank">presentation</a>
-            }         
-        </li>
-    ))
-}
-</ul>  
+    {
+        list.map(({ label, url, presentation }) => (
+            <li>
+                <a href={url} target="_blank">
+                    {label}
+                </a>
+                {presentation && (
+                    <span>
+                        , and{" "}
+                        <a href={presentation} target="_blank">
+                            presentation
+                        </a>
+                    </span>
+                )}
+            </li>
+        ))
+    }
+</ul>
