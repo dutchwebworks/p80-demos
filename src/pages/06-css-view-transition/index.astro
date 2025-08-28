@@ -13,6 +13,8 @@ const permalink = `${Astro.site.href}06-css-view-transition/`;
 <Layout title={title} description={description} permalink={permalink} showBackButton={true}>
     <Head slot="begin-head" />
 
+    <script src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js" type="module" slot="end-head"></script>
+
     <main>
         <section>
             <Header />
@@ -21,7 +23,8 @@ const permalink = `${Astro.site.href}06-css-view-transition/`;
                 <h2>Intro</h2>
 
                 <p>
-                    Requirements: a browser that supports the <a href="https://caniuse.com/view-transitions" target="_blank">View Transition API</a>
+                    Using the (CSS) View Transition API, you can create smooth transitions between different states of your web application. This can
+                    be done on the <strong>same page</strong> or between <strong>different pages</strong> (as long as they share the same origin).
                 </p>
 
                 <p>This is a very basic demo of using (CSS) View Transition API in full page transition.</p>
@@ -46,23 +49,26 @@ const permalink = `${Astro.site.href}06-css-view-transition/`;
 
                 <h2>Browser support</h2>
 
-                <p>
-                    As of this writing only Chromium web browser (Chrome, Edge, Opera and Chrome for Android), with a experimental flag enabled, are
-                    supporting this new feature.
-                </p>
+                <baseline-status featureId="view-transitions"></baseline-status>
 
-                <h2>Enabling View Transition API in Chrome (Chromium)</h2>
+                <p>As of this writing (August 2025) CSS ViewTransitions work in Chromium based web browsers:</p>
 
                 <ul>
-                    <li>Open Chrome</li>
-                    <li>In the address bar type: <code>chrome://flags/</code></li>
-                    <li>
-                        In the search bar type: <code>viewTransition</code>, two items will be shown: <strong>viewTransition API</strong> and <strong>
-                            viewTransition API for navigations
-                        </strong>
-                    </li>
-                    <li>"Enable" both and click the <strong>"Relaunch"</strong> -button</li>
+                    <li>Chrome (desktop and Android)</li>
+                    <li>Edge</li>
+                    <li>Brave</li>
+                    <li>Opera (desktop and mobile)</li>
+                    <li>Vivaldi</li>
+                    <li>Safari (macOS &amp; iOS)</li>
+                    <li>Samsung Internet</li>
+                    <li>Android Browser</li>
                 </ul>
+
+                <p>
+                    <strong>Firefox</strong> has support for CSS <code>view-transitions</code> behind a feature flag. On the Firefox Nightly web browser
+                    <code>view-transitions</code>
+                    are <strong>enabled by default.</strong>
+                </p>
 
                 <p>
                     Check <a href="https://caniuse.com/view-transitions" target="_blank">caniuse.com/view-transitions</a> for current web browser support.
@@ -77,7 +83,26 @@ const permalink = `${Astro.site.href}06-css-view-transition/`;
                             https://github.com/google/io-connect-2024-ui-workshop
                         </a>
                     </li>
-                    <li><a href="https://fynn.be/blog/" target="_blank">https://fynn.be/blog/</a></li>
+                    <li><a href="https://view-transitions.chrome.dev/profiles/mpa/">https://view-transitions.chrome.dev/profiles/mpa/</a></li>
+                    <li>
+                        <a href="https://css-tricks.com/toe-dipping-into-view-transitions/">
+                            https://css-tricks.com/toe-dipping-into-view-transitions/
+                        </a>
+                    </li>
+                    <li><a href="https://view-transitions.chrome.dev/cards/spa/">https://view-transitions.chrome.dev/cards/spa/</a></li>
+                    <li><a href="https://http203-playlist.netlify.app/">https://http203-playlist.netlify.app/</a></li>
+                    <li><a href="https://tympanus.net/Tutorials/Velvette/?list">https://tympanus.net/Tutorials/Velvette/?list</a></li>
+                    <li>
+                        <a href="https://moritzglantz.de/multi-page-view-transitions-demo/">
+                            https://moritzglantz.de/multi-page-view-transitions-demo/
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://css-tricks.com/toe-dipping-into-view-transitions/">
+                            https://css-tricks.com/toe-dipping-into-view-transitions/
+                        </a>
+                    </li>
+                    <li><a href="https://www.patterns.dev/vanilla/view-transitions/">https://www.patterns.dev/vanilla/view-transitions/</a></li>
                     <li><a href="https://nerdy.dev/" target="_blank">https://nerdy.dev/</a></li>
                 </ul>
 
