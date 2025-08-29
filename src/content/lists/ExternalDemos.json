@@ -17,11 +17,6 @@
         "presentation": "https://docs.google.com/presentation/d/e/2PACX-1vS3_1Xvt2icevSlgI-xQjVLg8N-JRI8w1M0z8AhhdsgLGGlmJufReNZ-ERXw4lfARtpT7868g1Mklgo/pub?start=false&loop=false&delayms=60000"
     },
     {
-        "id": 4,
-        "label": "CSS Grid Learning",
-        "url": "https://css-grid-learning.dutchwebworks.nl/"
-    },
-    {
         "id": 5,
         "label": "PWA Learning",
         "url": "https://pwa-learning.dutchwebworks.nl/"
@@ -30,11 +25,6 @@
         "id": 6,
         "label": "Vue Learning",
         "url": "https://vue-learning.dutchwebworks.nl/"
-    },
-    {
-        "id": 7,
-        "label": "VueJS 2 Web-component",
-        "url": "https://vue-web-component-demo.dutchwebworks.nl"
     },
     {
         "id": 8,
