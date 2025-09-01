@@ -19,12 +19,12 @@ const { title, description, permalink, showBackButton } = Astro.props;
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <slot name="begin-head" />
-
         <title>{title} - {SITE_TITLE}</title>
+
+        <slot name="begin-head" />
 
         <meta name="theme-color" content="#3da8f5" />
 
