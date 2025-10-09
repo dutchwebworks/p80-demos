@@ -1,36 +1,102 @@
 @layer framework, global, design, utilities;
 
+@property --clr-primary {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: deepskyblue;
+}
+
+@property --clr-secondary {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: deeppink;
+}
+
+@property --clr-lighter {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #eee;
+}
+
+@property --clr-light {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #aaa;
+}
+
+@property --clr-gray {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #595959;
+}
+
+@property --clr-dark {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #263238;
+}
+
+@property --clr-p80-light-blue {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #3da8f5;
+}
+
+@property --clr-p80-dark-blue {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #1c374a;
+}
+
+@property --ff-base {
+    syntax: '<string>#';
+    inherits: true;
+    initial-value: 'system-ui, sans-serif';
+}
+
+@property --ff-accent {
+    syntax: '<string>#';
+    inherits: true;
+    initial-value: 'system-ui, sans-serif';
+}
+
+@property --site-max-width {
+    syntax: '<length>';
+    inherits: true;
+    initial-value: 0px;
+}
+
+:root {
+    --clr-primary: deepskyblue;
+    --clr-secondary: deeppink;
+    --clr-lighter: #eee;
+    --clr-light: #aaa;
+    --clr-gray: #595959;
+    --clr-dark: #263238;
+    --clr-p80-light-blue: #3da8f5;
+    --clr-p80-dark-blue: #1c374a;
+    --ff-base: "Roboto", "Helvetica", "sans-serif";
+    --ff-accent: "Roboto", "Helvetica", "sans-serif";
+    --site-max-width: 768px;
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/fonts/Roboto-Light.woff2);
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Roboto-Regular.woff2);
+}
+
 @layer global {
-    :root {
-        --clr-primary: deepskyblue;
-        --clr-secondary: deeppink;
-        --clr-lighter: #eee;
-        --clr-light: #aaa;
-        --clr-gray: #595959;
-        --clr-dark: #263238;
-        --clr-p80-light-blue: #3da8f5;
-        --clr-p80-dark-blue: #1c374a;
-        --ff-base: "Roboto", Helvetica, sans-serif;
-        --ff-accent: var(--ff-base);
-        --site-max-width: 768px;
-    }
-
-    @font-face {
-        font-family: "Roboto";
-        font-style: normal;
-        font-weight: 300;
-        font-display: swap;
-        src: url(/fonts/Roboto-Light.woff2);
-    }
-
-    @font-face {
-        font-family: "Roboto";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(/fonts/Roboto-Regular.woff2);
-    }
-
     body {
         margin: 0;
         font-family: var(--ff-base);
@@ -114,7 +180,7 @@
         padding: 3px 5px;
     }
 
-    .flow > * + * {
+    .flow>*+* {
         margin-block-start: 0;
     }
 }
