@@ -13,11 +13,11 @@ const permalink = `${Astro.site.href}06-css-view-transition/`;
 <Layout title={title} description={description} permalink={permalink} showBackButton={true}>
     <Head slot="begin-head" />
 
-    <script src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js" type="module" slot="end-head"></script>
-
     <main>
         <section>
             <Header />
+
+            <baseline-status featureId="view-transitions"></baseline-status>
 
             <article>
                 <h2>Intro</h2>
@@ -43,35 +43,6 @@ const permalink = `${Astro.site.href}06-css-view-transition/`;
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus deleniti illo molestias soluta iusto voluptatem aspernatur
                     dolor nostrum. Unde, culpa!
-                </p>
-
-                <hr style="margin-block: 60px" />
-
-                <h2>Browser support</h2>
-
-                <baseline-status featureId="view-transitions"></baseline-status>
-
-                <p>As of this writing (August 2025) CSS ViewTransitions work in Chromium based web browsers:</p>
-
-                <ul>
-                    <li>Chrome (desktop and Android)</li>
-                    <li>Edge</li>
-                    <li>Brave</li>
-                    <li>Opera (desktop and mobile)</li>
-                    <li>Vivaldi</li>
-                    <li>Safari (macOS &amp; iOS)</li>
-                    <li>Samsung Internet</li>
-                    <li>Android Browser</li>
-                </ul>
-
-                <p>
-                    <strong>Firefox</strong> has support for CSS <code>view-transitions</code> behind a feature flag. On the Firefox Nightly web browser
-                    <code>view-transitions</code>
-                    are <strong>enabled by default.</strong>
-                </p>
-
-                <p>
-                    Check <a href="https://caniuse.com/view-transitions" target="_blank">caniuse.com/view-transitions</a> for current web browser support.
                 </p>
 
                 <h2>More demo's</h2>

@@ -10,6 +10,8 @@ const permalink = `${Astro.site.href}08-accessible-tabs/`;
 
 <Layout title={title} description={description} permalink={permalink} showBackButton={true}>
     <main>
+        <baseline-status featureId="article" style="margin-block-end: 20px;"></baseline-status>
+
         <section>
             <nav role="tablist" aria-label="tabs">
                 <button id="tab-one-button" aria-selected="true" aria-controls="tab-one" role="tab">About</button>

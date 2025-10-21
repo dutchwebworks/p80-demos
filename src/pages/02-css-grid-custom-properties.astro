@@ -8,6 +8,8 @@ const permalink = `${Astro.site.href}02-css-grid-custom-properties/`;
 
 <Layout title={title} description={description} permalink={permalink} showBackButton={true}>
     <main>
+        <baseline-status featureId="grid"></baseline-status>
+
         <h2>HTML inline CSS Custom Propertiess</h2>
 
         <p>
@@ -19,7 +21,7 @@ const permalink = `${Astro.site.href}02-css-grid-custom-properties/`;
 
         <p>Open the <strong>developer tools</strong> and change this <code>style</code> -attributes number of columns to see the change.</p>
 
-        <section class="cards" style="--nr-of-columns: 2">
+        <section class="cards" style="--nr-of-columns: 2; margin-block-end: 20px;">
             <article class="card">
                 <img src="https://fakeimg.pl/300x200/3da8f5/ffffff" width="300" height="200" alt="Placeholder" />
 
