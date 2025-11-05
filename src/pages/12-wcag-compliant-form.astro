@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "WCAG Compliant Form";
+const description = "Creating a forms that meet WCAG accessibility standards";
+const permalink = `${Astro.site.href}12-wcag-compliant-form/`;
+---
+
+<Layout title={title} description={description} permalink={permalink} showBackButton={true}>
+    <script src="/js/form-validation.js" defer slot="js-head"></script>
+
+    <main>
+        <p>{description}</p>
+
+        <form id="wcag-form" action="" method="get">
+            <fieldset>
+                <legend>Username and password</legend>
+
+                <p>Fields marked with an asterisk <span class="form-group__required">*</span> are required.</p>
+
+                <div class="form-group">
+                    <label for="name" class="form-group__label">Username <span class="form-group__required">*</span></label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="form-group__input"
+                        autocomplete="username"
+                        required
+                        aria-required="true"
+                        aria-errormessage="name-error"
+                    />
+                    <small id="name-error" class="form-group__error-message">Please enter your username</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-group__label">Password <span class="form-group__required">*</span></label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-group__input"
+                        autocomplete="new-password"
+                        required
+                        aria-required="true"
+                        aria-errormessage="password-error"
+                    />
+                    <small id="password-error" class="form-group__error-message">Please enter your password</small>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Send" class="btn btn--primary" />
+                </div>
+            </fieldset>
+        </form>
+    </main>
+</Layout>
+
+<style is:global>
+    #wcag-form {
+        fieldset {
+            padding: 10px 40px;
+            border-radius: 8px;
+            border: 1px solid var(--clr-light);
+        }
+
+        legend {
+            font-size: 1.5rem;
+            padding-inline: 20px 20px;
+            color: var(--clr-secondary);
+        }
+    }
+
+    .form-group {
+        margin-block-end: 1rem;
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+    }
+
+    .form-group__required {
+        color: red;
+    }
+
+    [aria-invalid="true"] {
+        border: 2px solid red;
+    }
+
+    .form-group__error-message {
+        display: block;
+        margin-top: 0.25rem;
+        font-size: 0.875rem;
+        color: gray;
+        visibility: hidden;
+    }
+
+    [aria-invalid="true"] ~ .form-group__error-message {
+        visibility: visible;
+        color: red;
+    }
+</style>

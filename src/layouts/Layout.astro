@@ -44,6 +44,8 @@ const { title, description, permalink, showBackButton } = Astro.props;
 
         <link href="/app.webmanifest" rel="manifest" />
 
+        <slot name="js-head" />
+
         <script src="/js/register-service-worker.js" defer></script>
 
         <script src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js" type="module"></script>

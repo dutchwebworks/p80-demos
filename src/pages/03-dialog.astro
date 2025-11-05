@@ -6,9 +6,9 @@ const description = "CSS dialog demo for Poort80";
 const permalink = `${Astro.site.href}03-dialog/`;
 ---
 
-<script is:inline src="/js/dialog-toggle.js" defer></script>
-
 <Layout title={title} description={description} permalink={permalink} showBackButton={true}>
+    <script src="/js/dialog-toggle.js" defer slot="js-head"></script>
+
     <main>
         <baseline-status featureId="dialog"></baseline-status>
 

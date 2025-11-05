@@ -194,6 +194,11 @@
         border-radius: 10px;
         margin-block-end: 20px;
         cursor: pointer;
+
+        &:focus-visible {
+            outline: 3px solid black;
+            outline-offset: 2px;
+        }
     }
 
     .btn--primary {

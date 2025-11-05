@@ -53,5 +53,10 @@
         "id": 11,
         "label": "CSS counting headings",
         "url": "/11-css-counting-headings"
+    },
+    {
+        "id": 12,
+        "label": "WCAG Compliant Form",
+        "url": "/12-wcag-compliant-form"
     }
 ]
