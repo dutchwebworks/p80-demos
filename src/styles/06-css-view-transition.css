@@ -7,6 +7,10 @@
     animation-duration: 0.3s;
 }
 
+baseline-status {
+    margin-bottom: 2rem;
+}
+
 figure {
     margin: 0;
 }
