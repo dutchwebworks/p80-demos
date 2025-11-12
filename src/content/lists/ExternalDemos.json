@@ -1,12 +1,12 @@
 [
     {
         "id": 1,
-        "label": "Poort80 Vue Custom Element",
+        "label": "Vue Custom Element Learning",
         "url": "https://vue-custom-element-learning.dutchwebworks.nl"
     },
     {
         "id": 2,
-        "label": "CSS Container Queries",
+        "label": "CSS Container Queries Learning",
         "url": "https://css-container-queries-learning.dutchwebworks.nl",
         "presentation": "https://docs.google.com/presentation/d/1VScY4NnYEphfFcMi4Svlo4xYur9zukvZpcZbB7ZnQrc/edit?usp=sharing"
     },
@@ -28,7 +28,7 @@
     },
     {
         "id": 8,
-        "label": "Responsive Images",
+        "label": "Responsive Images Learning",
         "url": "https://responsive-images-learning.dutchwebworks.nl"
     },
     {
@@ -38,12 +38,12 @@
     },
     {
         "id": 10,
-        "label": "CSS Logical Properties - Language Change",
+        "label": "CSS Logical Properties Language Change",
         "url": "https://css-logical-properties-language-change.dutchwebworks.nl"
     },
     {
         "id": 11,
-        "label": "Speculative Navigation",
+        "label": "Speculative Navigation Learning",
         "url": "https://speculative-navigation-learning.dutchwebworks.nl"
     },
     {
