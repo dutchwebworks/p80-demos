@@ -9,6 +9,8 @@ const permalink = `${Astro.site.href}09-css-counting-headings/`;
 
 <Layout title={title} description={description} permalink={permalink} showBackButton={true}>
     <main>
+        <baseline-status featureId="counters"></baseline-status>
+
         <h2>Counting heading</h2>
 
         <p>
@@ -57,8 +59,6 @@ h2::before &#x2774;
         </code>
 
         <p>And add a bit of CSS styling.</p>
-
-        <baseline-status featureId="counters"></baseline-status>
     </main>
 </Layout>
 
