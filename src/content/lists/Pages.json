@@ -58,5 +58,10 @@
         "id": 12,
         "label": "WCAG Compliant Form",
         "url": "/12-wcag-compliant-form"
+    },
+    {
+        "id": 13,
+        "label": "SVG Icon Coloring",
+        "url": "/13-svg-icon-coloring"
     }
 ]

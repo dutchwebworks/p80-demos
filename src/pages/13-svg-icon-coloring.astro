@@ -1,0 +1,142 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "SVG Icon Coloring";
+const description = "Coloring SVG icons using CSS and currentColor";
+const permalink = `${Astro.site.href}13-svg-icon-coloring/`;
+---
+
+<Layout title={title} description={description} permalink={permalink} showBackButton={true}>
+    <script src="/js/form-validation.js" defer slot="js-head"></script>
+
+    <main>
+        <baseline-status featureId="masks" style="margin-block-end: 20px;"></baseline-status>
+
+        <p>{description}</p>
+
+        <div class="icon-grid">
+            <i class="icon icon--cone1" style="mask-image:url(/img/icons/ice-cream-cone-svgrepo-com.svg)" aria-hidden="true"></i>
+
+            <i class="icon icon--cone2" style="mask-image:url(/img/icons/ice-cream-cone-svgrepo-com.svg)" aria-hidden="true"></i>
+
+            <i class="icon icon--shop" style="mask-image:url(/img/icons/shop-svgrepo-com.svg)" aria-hidden="true"></i>
+
+            <i class="icon icon--building-3" style="mask-image:url(/img/icons/buildings-3-svgrepo-com.svg)" aria-hidden="true"></i>
+
+            <i class="icon icon--speedometer1" style="mask-image:url(/img/icons/speedometer-03.svg)" aria-hidden="true"></i>
+
+            <i class="icon icon--speedometer2" style="mask-image:url(/img/icons/speedometer-03.svg)" aria-hidden="true"></i>
+
+            <i class="icon icon--chef" style="mask-image:url(/img/icons/chef-man-cap-svgrepo-com.svg)" aria-hidden="true"></i>
+
+            <i class="icon icon--camera" style="mask-image:url(/img/icons/camera-photo-heart-svgrepo-com.svg)" aria-hidden="true"></i>
+        </div>
+
+        <h2>Links</h2>
+
+        <ul>
+            <li>
+                Inspired by blog article: <a href="https://www.vibe-icons.com/blog/change-color-icon" target="_blank" rel="noopener">
+                    vibe-icons.com: "A Developer's Guide to Change Color Icon with CSS & SVG"
+                </a>
+            </li>
+            <li>
+                <a href="https://www.svgrepo.com/collections/sharp/" target="_blank" rel="noopener">https://www.svgrepo.com/collections/sharp/</a>
+            </li>
+        </ul>
+    </main>
+</Layout>
+
+<style is:global>
+    @property --gradient-angle {
+        syntax: "<angle>";
+        initial-value: 90deg;
+        inherits: false;
+    }
+
+    .icon-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .icon {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        mask-size: cover;
+        background: var(--clr-dark);
+        transition: background-color 0.3s ease;
+    }
+
+    .icon--shop {
+        cursor: pointer;
+        background: var(--clr-primary);
+        transition:
+            scale 1s cubic-bezier(0.98, -0.76, 0.26, 1.61),
+            background-color 1s ease;
+
+        &:hover {
+            scale: 2.5;
+            background: var(--clr-secondary);
+        }
+    }
+
+    .icon--chef {
+        cursor: pointer;
+        width: 80px;
+        height: 80px;
+        background: var(--clr-secondary);
+
+        &:hover {
+            background: var(--clr-primary);
+        }
+    }
+
+    .icon--cone1 {
+        width: 80px;
+        height: 80px;
+        background: #cda26f;
+    }
+
+    .icon--cone2 {
+        width: 80px;
+        height: 80px;
+        background: #d8758b;
+    }
+
+    .icon--speedometer1 {
+        width: 80px;
+        height: 80px;
+        background: var(--clr-primary);
+    }
+
+    .icon--speedometer2 {
+        width: 80px;
+        height: 80px;
+        background: var(--clr-secondary);
+    }
+
+    .icon--camera {
+        width: 180px;
+        height: 180px;
+        background: linear-gradient(var(--gradient-angle), var(--clr-primary), var(--clr-secondary));
+        animation: rotateGradient 4s linear infinite;
+    }
+
+    @keyframes rotateGradient {
+        0% {
+            --gradient-angle: 0deg;
+        }
+
+        100% {
+            --gradient-angle: 360deg;
+        }
+    }
+
+    .icon--building-3 {
+        background: linear-gradient(45deg, var(--clr-primary), var(--clr-secondary));
+    }
+</style>
