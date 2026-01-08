@@ -67,6 +67,8 @@ const permalink = `${Astro.site.href}14-css-relative-colors/`;
     // ... set a relative opacity to 50%
     box-shadow: 0 10px 8px hsl(from <strong style="background-color: lightgreen;">var(--item-color)</strong> <strong style="background-color: yellow;">h s l / 0.5</strong>);
 
+
+    // Change the `--item-color` based on status
     &[data-status="info"] &#x2774;
         <strong style="background-color: lightgreen;">--item-color</strong>: var(--clr-status-info); // Blue
     &#10101;
@@ -81,6 +83,32 @@ const permalink = `${Astro.site.href}14-css-relative-colors/`;
 &#10101;
             </pre>
         </code>
+
+        <h2 style="margin-block-start: 80px;">More demo's and documentation</h2>
+
+        <iframe
+            title="Kevin Powell: This CSS feature changed how I work with colors"
+            width="100%"
+            style="object-fit: cover; max-width: 100%; aspect-ratio: 16/9;"
+            src="https://www.youtube-nocookie.com/embed/vGfTyHPWZLE?si=71hARoVNVvQsfKPc"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+        >
+        </iframe>
+
+        <ul>
+            <li>
+                <a href="https://web.dev/articles/baseline-in-action-color-theme" target="_blank">
+                    David A. Herron: "Color Themes with Baseline CSS features" (Web.dev)
+                </a>
+            </li>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Using_relative_colors" target="_blank">
+                    "Using relative colors" (MDN Web Docs)
+                </a>
+            </li>
+        </ul>
     </main>
 </Layout>
 
