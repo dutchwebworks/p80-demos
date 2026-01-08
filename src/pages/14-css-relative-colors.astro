@@ -14,7 +14,27 @@ const permalink = `${Astro.site.href}14-css-relative-colors/`;
 
         <baseline-status featureId="relative-color" style="margin-block-end: 20px;"></baseline-status>
 
-        <h2 style="margin-block-start: 80px;">Status messages</h2>
+        <h2 style="margin-block-start: 80px;">Common verbose color patterns using CSS Custom Properties</h2>
+
+        <p>Pretty wastefull and verbose use of CSS Custom Properties for colors.</p>
+
+        <code style="display: block;overflow-x: scroll;padding-inline:20px;border-radius: 10px;">
+            <pre>
+:root &#x2774;
+    // Named based colors
+    --clr-primary: #0362fc; // Base color blue
+    --clr-primary-dark: #004eff; // Darker, based on blue
+    --clr-primary-hover: #a8e3ff; // Lighter, based on blue
+    
+    // ... or even shades
+    --clr-primary-700: #004eff; // Shade based on blue
+    --clr-primary-500: #0092ff; // Shade based on blue
+    --clr-primary-200: #a8e3ff; // Shade based on blue
+&#10101;                  
+            </pre>
+        </code>
+
+        <h2 style="margin-block-start: 80px;">Demo using CSS relative colors</h2>
 
         <p>
             Changing colors <strong>relatively</strong>, like <code>background-color</code> and <code>box-shadow</code>, based on a <strong>
@@ -34,19 +54,22 @@ const permalink = `${Astro.site.href}14-css-relative-colors/`;
             <div class="status-grid__item" data-status="error">Error: Something went wrong.</div>
         </fieldset>
 
-        <h2 style="margin-block-start: 80px;">Example</h2>
+        <h3 style="margin-block-start: 80px;">How it works</h3>
 
         <p>
-            Getting a new relative color using HSL and a CSS Custom Properties <code>hsl(from var(--item-color) h s l)</code> and changing the
-            <code style="background-color: yellow;">h</code>, <code style="background-color: yellow;">s</code> and <code
+            Getting a new relative color using HSL and a CSS Custom Properties <code>
+                hsl(from <span style="background-color: lightgreen;">var(--item-color)</span> h s l)
+            </code> and changing the
+            <code style="background-color: yellow;">h</code> (hue), <code style="background-color: yellow;">s</code> (saturation) and <code
                 style="background-color: yellow;"
             >
                 l
-            </code> (and optional opacity <code style="background-color: yellow;">/ 0.5</code>) values relatively based on the <code>from</code>'s CSS
-            Custom Property.
+            </code> (lightness), and optional opacity <code style="background-color: yellow;">/ 0.5</code>, values relatively based on the <code>
+                from
+            </code>'s CSS Custom Property.
         </p>
 
-        <code style="display: block;padding-inline:20px;border-radius: 10px;">
+        <code style="display: block;overflow-x: scroll;padding-inline:20px;border-radius: 10px;">
             <pre>
 <strong>// Parent element</strong>
 .status-grid &#x2774;
@@ -59,9 +82,11 @@ const permalink = `${Astro.site.href}14-css-relative-colors/`;
 <strong>// Child element</strong>
 .status-grid__item &#x2774;
     <strong style="background-color: lightgreen;">--item-color</strong>: <strong style="background-color: lightsalmon;">var(--clr-base)</strong>;
+    
+    // ... now you can tinker with these h s l values relatively
     color: hsl(from <strong style="background-color: lightgreen;">var(--item-color)</strong> <strong style="background-color: yellow;">h s l</strong>);
 
-    // .. take the `lightness` value from `--item-color` and set it to 85%
+    // .. take the `lightness` value from `--item-color` and set it to <strong style="font-size: 1.5rem">85%</strong>
     background-color: hsl(from <strong style="background-color: lightgreen;">var(--item-color)</strong> <strong style="background-color: yellow;">h s 85%</strong>);
 
     // ... set a relative opacity to 50%
@@ -85,6 +110,8 @@ const permalink = `${Astro.site.href}14-css-relative-colors/`;
         </code>
 
         <h2 style="margin-block-start: 80px;">More demo's and documentation</h2>
+
+        <h3>Awesome demo by Kevin Powell</h3>
 
         <iframe
             title="Kevin Powell: This CSS feature changed how I work with colors"
