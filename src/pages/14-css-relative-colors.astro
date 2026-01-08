@@ -1,0 +1,147 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "CSS relative colors";
+const description = "A demo page for CSS relative colors.";
+const permalink = `${Astro.site.href}14-css-relative-colors/`;
+---
+
+<Layout title={title} description={description} permalink={permalink} showBackButton={true}>
+    <main>
+        <baseline-status featureId="custom-properties" style="margin-block-end: 20px;"></baseline-status>
+
+        <baseline-status featureId="hsl" style="margin-block-end: 20px;"></baseline-status>
+
+        <baseline-status featureId="relative-color" style="margin-block-end: 20px;"></baseline-status>
+
+        <h2 style="margin-block-start: 80px;">Status messages</h2>
+
+        <p>
+            Changing colors <strong>relatively</strong>, like <code>background-color</code> and <code>box-shadow</code>, based on a <strong>
+                base color using CSS Custom Properties
+            </strong>.
+        </p>
+
+        <fieldset class="status-grid">
+            <legend><code>.status-grid</code></legend>
+
+            <div class="status-grid__item">Default text block.</div>
+
+            <div class="status-grid__item" data-status="info">Info! Your operation was completed.</div>
+
+            <div class="status-grid__item" data-status="warning">Warning: Check your input values.</div>
+
+            <div class="status-grid__item" data-status="error">Error: Something went wrong.</div>
+        </fieldset>
+
+        <h2 style="margin-block-start: 80px;">Example</h2>
+
+        <p>
+            Getting a new relative color using HSL and a CSS Custom Properties <code>hsl(from var(--item-color) h s l)</code> and changing the
+            <code style="background-color: yellow;">h</code>, <code style="background-color: yellow;">s</code> and <code
+                style="background-color: yellow;"
+            >
+                l
+            </code> (and optional opacity <code style="background-color: yellow;">/ 0.5</code>) values relatively based on the <code>from</code>'s CSS
+            Custom Property.
+        </p>
+
+        <code style="display: block;padding-inline:20px;border-radius: 10px;">
+            <pre>
+<strong>// Parent element</strong>
+.status-grid &#x2774;
+    <strong style="background-color: lightsalmon;">--clr-base</strong>: #212121; // Dark gray
+    --clr-status-info: #0362fc; // Blue    
+    --clr-status-warning: rgb(200, 100, 0); // Orange
+    --clr-status-error: hsl(0 100% 50%); // Red
+&#10101;
+
+<strong>// Child element</strong>
+.status-grid__item &#x2774;
+    <strong style="background-color: lightgreen;">--item-color</strong>: <strong style="background-color: lightsalmon;">var(--clr-base)</strong>;
+    color: hsl(from <strong style="background-color: lightgreen;">var(--item-color)</strong> <strong style="background-color: yellow;">h s l</strong>);
+
+    // .. take the `lightness` value from `--item-color` and set it to 85%
+    background-color: hsl(from <strong style="background-color: lightgreen;">var(--item-color)</strong> <strong style="background-color: yellow;">h s 85%</strong>);
+
+    // ... set a relative opacity to 50%
+    box-shadow: 0 10px 8px hsl(from <strong style="background-color: lightgreen;">var(--item-color)</strong> <strong style="background-color: yellow;">h s l / 0.5</strong>);
+
+    &[data-status="info"] &#x2774;
+        <strong style="background-color: lightgreen;">--item-color</strong>: var(--clr-status-info); // Blue
+    &#10101;
+
+    &[data-status="warning"] &#x2774;
+        <strong style="background-color: lightgreen;">--item-color</strong>: var(--clr-status-warning); // Orange
+    &#10101;
+
+    &[data-status="error"] &#x2774;
+        <strong style="background-color: lightgreen;">--item-color</strong>: var(--clr-status-error); // Red
+    &#10101;
+&#10101;
+            </pre>
+        </code>
+    </main>
+</Layout>
+
+<style is:global>
+    @property --clr-base {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: #222;
+    }
+
+    @property --clr-status-info {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: blue;
+    }
+
+    @property --clr-status-warning {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: orange;
+    }
+
+    @property --clr-status-error {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: red;
+    }
+
+    .status-grid {
+        --clr-base: #212121;
+        --clr-status-info: #0362fc;
+        --clr-status-warning: rgb(200, 100, 0);
+        --clr-status-error: hsl(0 100% 50%);
+
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px;
+    }
+
+    .status-grid__item {
+        --item-color: var(--clr-base);
+
+        padding: 10px;
+        border: 2px solid;
+        border-radius: 8px;
+        color: hsl(from var(--item-color) h s l);
+        background-color: hsl(from var(--item-color) h s 85%);
+        box-shadow: 0 10px 8px hsl(from var(--item-color) h s l / 0.5);
+        /* box-shadow: 0 10px 8px hsl(from var(--item-color) h s 20% / 0.5); */
+
+        &[data-status="info"] {
+            --item-color: var(--clr-status-info);
+        }
+
+        &[data-status="warning"] {
+            --item-color: var(--clr-status-warning);
+        }
+
+        &[data-status="error"] {
+            --item-color: var(--clr-status-error);
+        }
+    }
+</style>
