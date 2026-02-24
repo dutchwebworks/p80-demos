@@ -1,0 +1,153 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "CSS @scope";
+const description = "A demo of scoped CSS";
+const permalink = `${Astro.site.href}15-css-at-scope/`;
+---
+
+<Layout title={title} description={description} permalink={permalink} showBackButton={true}>
+    <main>
+        <baseline-status featureId="scope" style="margin-block-end: 20px;"></baseline-status>
+
+        <h2>CSS Donut Scoping</h2>
+
+        <div class="card-wrapper">
+            <div class="card">
+                <img src="/img/hotel-beneville.jpg" alt="Hotel Beneville" width="400" height="200" loading="eager" fetchpriority="high" />
+
+                <h2>Hotel Beneville</h2>
+
+                <p>Amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!</p>
+
+                <div class="other-component">
+                    <h2>Facilities</h2>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum
+                        obcaecati!
+                    </p>
+                </div>
+
+                <a href="#" aria-label="Read more about CSS @scope">Read more</a>
+            </div>
+
+            <div class="card">
+                <img src="/img/hotel-mondane.jpg" alt="Hotel Mondane" width="400" height="200" loading="eager" fetchpriority="high" />
+
+                <h2>Hotel Mondane</h2>
+
+                <p>Amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!</p>
+
+                <div class="other-component">
+                    <h2>Facilities</h2>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum
+                        obcaecati!
+                    </p>
+                </div>
+
+                <a href="#" aria-label="Read more about CSS @scope">Read more</a>
+            </div>
+
+            <div class="card">
+                <img src="/img/hotel-begonville.jpg" alt="Hotel Begonville" width="400" height="200" loading="eager" fetchpriority="high" />
+
+                <h2>Hotel Begonville</h2>
+
+                <p>Amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!</p>
+
+                <div class="other-component">
+                    <h2>Facilities</h2>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum
+                        obcaecati!
+                    </p>
+                </div>
+
+                <a href="#" aria-label="Read more about CSS @scope">Read more</a>
+            </div>
+        </div>
+
+        <h2>Example CSS @scope</h2>
+
+        <code style="display: block;overflow-x: scroll;padding-inline:20px;border-radius: 10px;">
+            <pre>
+@scope (.card) to (.other-component) &#x2774;
+    // donut scoping
+&#10101;
+            </pre>
+        </code>
+
+        <h2>Inspired by:</h2>
+
+        <p>Smashing Magazine article</p>
+
+        <a href="https://www.smashingmagazine.com/2026/02/css-scope-alternative-naming-conventions/">
+            CSS @scope: An Alternative To Naming Conventions And Heavy Abstractions
+        </a>
+    </main>
+</Layout>
+
+<style is:global>
+    :root {
+        --border-radius: 16px;
+    }
+
+    .card-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .card {
+        overflow: hidden;
+    }
+
+    .other-component {
+        margin-inline: 20px;
+        background-color: #eee;
+        border: 1px solid #000;
+        border-radius: var(--border-radius);
+        padding: 10px;
+        margin-block-end: 20px;
+    }
+
+    @scope (.card) to (.other-component) {
+        --padding: 20px;
+        padding-block-end: var(--padding);
+        background-color: #eee;
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+
+        img {
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        h2,
+        p {
+            padding-inline: var(--padding);
+        }
+
+        h2 {
+            color: #000;
+            font-size: 22px;
+
+            a {
+                color: pink;
+                text-decoration: none;
+            }
+        }
+
+        p {
+            color: var(--clr-primary);
+        }
+
+        a {
+            display: inline-block;
+            margin-inline: var(--padding);
+            text-align: end;
+        }
+    }
+</style>
