@@ -10,84 +10,110 @@ const permalink = `${Astro.site.href}15-css-at-scope/`;
     <main>
         <baseline-status featureId="scope" style="margin-block-end: 20px;"></baseline-status>
 
-        <h2>CSS Donut Scoping</h2>
-
-        <div class="card-wrapper">
-            <div class="card">
-                <img src="/img/hotel-beneville.jpg" alt="Hotel Beneville" width="400" height="200" loading="eager" fetchpriority="high" />
-
-                <h2>Hotel Beneville</h2>
-
-                <p>Amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!</p>
-
-                <div class="other-component">
-                    <h2>Facilities</h2>
-
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum
-                        obcaecati!
-                    </p>
-                </div>
-
-                <a href="#" aria-label="Read more about CSS @scope">Read more</a>
-            </div>
-
-            <div class="card">
-                <img src="/img/hotel-mondane.jpg" alt="Hotel Mondane" width="400" height="200" loading="eager" fetchpriority="high" />
-
-                <h2>Hotel Mondane</h2>
-
-                <p>Amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!</p>
-
-                <div class="other-component">
-                    <h2>Facilities</h2>
-
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum
-                        obcaecati!
-                    </p>
-                </div>
-
-                <a href="#" aria-label="Read more about CSS @scope">Read more</a>
-            </div>
-
-            <div class="card">
-                <img src="/img/hotel-begonville.jpg" alt="Hotel Begonville" width="400" height="200" loading="eager" fetchpriority="high" />
-
-                <h2>Hotel Begonville</h2>
-
-                <p>Amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!</p>
-
-                <div class="other-component">
-                    <h2>Facilities</h2>
-
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum
-                        obcaecati!
-                    </p>
-                </div>
-
-                <a href="#" aria-label="Read more about CSS @scope">Read more</a>
-            </div>
-        </div>
-
-        <h2>Example CSS @scope</h2>
+        <h2>CSS "Donut Scoping" using @scope</h2>
 
         <code style="display: block;overflow-x: scroll;padding-inline:20px;border-radius: 10px;">
             <pre>
 @scope (.card) to (.other-component) &#x2774;
-    // donut scoping
-&#10101;
-            </pre>
+    // Styling goes here for .card (the donut) 
+    // but NOT .other-component (hole of the donut)
+&#10101;</pre>
         </code>
 
-        <h2>Inspired by:</h2>
+        <h3>Inspired by:</h3>
 
-        <p>Smashing Magazine article</p>
+        <ul>
+            <li>
+                <strong>CSS Tricks article:</strong>
+                <a href="https://css-tricks.com/solved-by-css-donuts-scopes/" target="_blank" rel="nofollow">"Solved by CSS: Donuts Scopes"</a>
+            </li>
+            <li>
+                <strong>Smashing Magazine article:</strong>
+                <a href="https://www.smashingmagazine.com/2026/02/css-scope-alternative-naming-conventions/" target="_blank" rel="nofollow">
+                    "CSS @scope: An Alternative To Naming Conventions And Heavy Abstractions"
+                </a>
+            </li>
+        </ul>
 
-        <a href="https://www.smashingmagazine.com/2026/02/css-scope-alternative-naming-conventions/">
-            CSS @scope: An Alternative To Naming Conventions And Heavy Abstractions
-        </a>
+        <figure>
+            <figcaption>Using CSS <code>@scope</code> we only apply styles to the <strong>dark orange part</strong> displayed below</figcaption>
+            <img src="/img/donut-scoping.png" width="" height="" alt="Donut scoping" fetchpriority="high" loading="eager" />
+        </figure>
+
+        <h2>More donut examples</h2>
+
+        <ul>
+            <li>
+                Below we have <strong>3 card</strong>s (the donuts) and inside them is "another component" (the hole of the donut) that we <strong>
+                    DONT'T want to be styled
+                </strong>.
+            </li>
+
+            <li>
+                The HTML headings in each <code>.card</code>, also in <code>.other-component</code>, is a HTML H2 element. And <strong>
+                    should NOT be affected by the scoped CSS
+                </strong>.
+            </li>
+        </ul>
+
+        <section class="card-wrapper">
+            <article class="card">
+                <img src="/img/donut-1.png" alt="Disco donuts" width="400" height="200" loading="lazy" />
+
+                <h2>Disco donuts</h2>
+
+                <p>Amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!</p>
+
+                <div class="other-component">
+                    <h2>Other component</h2>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum
+                        obcaecati!
+                    </p>
+                </div>
+
+                <a href="#" aria-label="Read more about Disco donuts">Read more</a>
+            </article>
+
+            <article class="card">
+                <img src="/img/donut-2.webp" alt="Chocolate donuts" width="400" height="200" loading="lazy" />
+
+                <h2>Chocolate donuts</h2>
+
+                <p>Amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!</p>
+
+                <div class="other-component">
+                    <h2>Other component</h2>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum
+                        obcaecati!
+                    </p>
+                </div>
+
+                <a href="#" aria-label="Read more about Chocolate donuts">Read more</a>
+            </article>
+
+            <article class="card">
+                <img src="/img/donut-3.jpg" alt="Sugar donuts" width="400" height="200" loading="lazy" />
+
+                <h2>Sugar donuts</h2>
+
+                <p>Amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!</p>
+
+                <div class="other-component">
+                    <h2>Other component</h2>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum
+                        obcaecati!
+                    </p>
+                </div>
+
+                <a href="#" aria-label="Read more about Sugar donuts">Read more</a>
+            </article>
+        </section>
     </main>
 </Layout>
 
@@ -96,58 +122,76 @@ const permalink = `${Astro.site.href}15-css-at-scope/`;
         --border-radius: 16px;
     }
 
+    figure {
+        margin: 0;
+
+        img {
+            border-radius: 16px;
+        }
+    }
+
+    figcaption {
+        margin-block-end: 16px;
+        font-style: italic;
+    }
+
     .card-wrapper {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         gap: 20px;
     }
 
-    .card {
-        overflow: hidden;
+    @media (width >= 768px) {
+        .card-wrapper {
+            flex-direction: row;
+        }
     }
 
-    .other-component {
-        margin-inline: 20px;
-        background-color: #eee;
-        border: 1px solid #000;
-        border-radius: var(--border-radius);
-        padding: 10px;
-        margin-block-end: 20px;
-    }
-
+    /* Scope the styles to .card but not .other-component */
     @scope (.card) to (.other-component) {
         --padding: 20px;
-        padding-block-end: var(--padding);
-        background-color: #eee;
-        border-radius: 0 0 var(--border-radius) var(--border-radius);
 
-        img {
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
+        padding-block-end: var(--padding);
+        background-color: #63200d;
+        overflow: hidden;
+        border-radius: var(--border-radius) var(--border-radius) 40px 40px;
 
         h2,
         p {
             padding-inline: var(--padding);
+            color: #fff;
         }
 
         h2 {
-            color: #000;
-            font-size: 22px;
-
-            a {
-                color: pink;
-                text-decoration: none;
-            }
+            font-weight: 70;
+            font-size: 36px;
         }
 
-        p {
-            color: var(--clr-primary);
+        img {
+            width: 100%;
+            object-fit: cover;
         }
 
         a {
             display: inline-block;
             margin-inline: var(--padding);
             text-align: end;
+            color: #fff;
+        }
+    }
+
+    .other-component {
+        margin-inline: 20px;
+        margin-block-end: 20px;
+        padding: 10px;
+        border: 1px solid #000;
+        border-radius: var(--border-radius);
+        background-color: #faeadb;
+
+        h2 {
+            color: #82bcc7;
+            font-weight: 800;
         }
     }
 </style>
