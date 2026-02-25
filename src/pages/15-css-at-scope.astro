@@ -12,13 +12,35 @@ const permalink = `${Astro.site.href}15-css-at-scope/`;
 
         <h2>CSS "Donut Scoping" using @scope</h2>
 
+        <blockquote>
+            <q>Allows CSS rules to be scoped to part of the document, with upper and lower limits described by selectors.</q>
+        </blockquote>
+
         <code style="display: block;overflow-x: scroll;padding-inline:20px;border-radius: 10px;">
             <pre>
 @scope (.card) to (.other-component) &#x2774;
     // Styling goes here for .card (the donut) 
-    // but NOT .other-component (hole of the donut)
+    // but does NOT apply to .other-component (hole of the donut)
 &#10101;</pre>
         </code>
+
+        <ul>
+            <li>
+                MDN documentation: <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@scope"
+                    target="_blank"
+                    rel="nofollow"
+                >
+                    CSS @scope
+                </a>
+            </li>
+            <li>Can I Use.com: <a href="https://caniuse.com/?search=scope" target="_blank" rel="nofollow">scope</a></li>
+        </ul>
+
+        <figure>
+            <figcaption>Using CSS <code>@scope</code> we only apply styles to the <strong>dark orange part</strong> displayed below</figcaption>
+            <img src="/img/donut-scoping.png" width="" height="" alt="Donut scoping" fetchpriority="high" loading="eager" />
+        </figure>
 
         <h3>Inspired by:</h3>
 
@@ -35,18 +57,13 @@ const permalink = `${Astro.site.href}15-css-at-scope/`;
             </li>
         </ul>
 
-        <figure>
-            <figcaption>Using CSS <code>@scope</code> we only apply styles to the <strong>dark orange part</strong> displayed below</figcaption>
-            <img src="/img/donut-scoping.png" width="" height="" alt="Donut scoping" fetchpriority="high" loading="eager" />
-        </figure>
-
-        <h2>More donut examples</h2>
+        <h2>Donut styling explained</h2>
 
         <ul>
             <li>
                 Below we have <strong>3 card</strong>s (the donuts) and inside them is "another component" (the hole of the donut) that we <strong>
-                    DONT'T want to be styled
-                </strong>.
+                    DONT'T want to be infuenced by the CSS styles of the card
+                </strong>, and that's exactly what CSS @scope allows us to do .
             </li>
 
             <li>
@@ -56,16 +73,29 @@ const permalink = `${Astro.site.href}15-css-at-scope/`;
             </li>
         </ul>
 
+        <h3>Example donuts</h3>
+
+        <p>
+            Scoping CSS also helps by not having to put HTML classes on every element! Just style the HTML element itself inside the <code>
+                @scope
+            </code>. Inspect the <code>.card</code>'s HTML <strong>H2-element</strong> below.
+        </p>
+
         <section class="card-wrapper">
             <article class="card">
                 <img src="/img/donut-1.png" alt="Disco donuts" width="400" height="200" loading="lazy" />
 
-                <h2>Disco donuts</h2>
+                <h2>H2. Disco donuts</h2>
 
-                <p>Amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!</p>
+                <p>
+                    Amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati! Amet consectetur
+                    adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!
+                </p>
 
                 <div class="other-component">
-                    <h2>Other component</h2>
+                    <h2>H2. Other component</h2>
+
+                    <p><strong>Styling not influenced by the card's CSS</strong></p>
 
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum
@@ -79,17 +109,21 @@ const permalink = `${Astro.site.href}15-css-at-scope/`;
             <article class="card">
                 <img src="/img/donut-2.webp" alt="Chocolate donuts" width="400" height="200" loading="lazy" />
 
-                <h2>Chocolate donuts</h2>
+                <h2>H2. Chocolate donuts</h2>
 
                 <p>Amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!</p>
 
                 <div class="other-component">
-                    <h2>Other component</h2>
+                    <h2>H2. Other component</h2>
+
+                    <p><strong>Styling not influenced by the card's CSS</strong></p>
 
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum
-                        obcaecati!
+                        obcaecati! Amet consectetur adipisicing elit.
                     </p>
+
+                    <p>Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!</p>
                 </div>
 
                 <a href="#" aria-label="Read more about Chocolate donuts">Read more</a>
@@ -98,12 +132,14 @@ const permalink = `${Astro.site.href}15-css-at-scope/`;
             <article class="card">
                 <img src="/img/donut-3.jpg" alt="Sugar donuts" width="400" height="200" loading="lazy" />
 
-                <h2>Sugar donuts</h2>
+                <h2>H2. Sugar donuts</h2>
 
                 <p>Amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum obcaecati!</p>
 
                 <div class="other-component">
-                    <h2>Other component</h2>
+                    <h2>H2. Other component</h2>
+
+                    <p><strong>Styling not influenced by the card's CSS</strong></p>
 
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia cum eius facere ut ad libero amet ex consequatur nostrum
@@ -123,7 +159,7 @@ const permalink = `${Astro.site.href}15-css-at-scope/`;
     }
 
     figure {
-        margin: 0;
+        margin: 20px 0;
 
         img {
             border-radius: 16px;
@@ -135,16 +171,28 @@ const permalink = `${Astro.site.href}15-css-at-scope/`;
         font-style: italic;
     }
 
+    blockquote {
+        margin: 20px;
+        padding: 10px;
+        border-left: 4px solid #eee;
+        font-style: italic;
+        color: var(--clr-light);
+        font-size: 2rem;
+        line-height: 1.4;
+    }
+
     .card-wrapper {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         gap: 20px;
     }
 
     @media (width >= 768px) {
         .card-wrapper {
-            flex-direction: row;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(5, min-content);
+            gap: 0 20px;
         }
     }
 
@@ -152,10 +200,14 @@ const permalink = `${Astro.site.href}15-css-at-scope/`;
     @scope (.card) to (.other-component) {
         --padding: 20px;
 
+        display: grid;
+        grid-row: 1 / -1;
+        grid-template-rows: subgrid;
         padding-block-end: var(--padding);
         background-color: #63200d;
         overflow: hidden;
         border-radius: var(--border-radius) var(--border-radius) 40px 40px;
+        padding-block-end: 40px;
 
         h2,
         p {
@@ -164,8 +216,9 @@ const permalink = `${Astro.site.href}15-css-at-scope/`;
         }
 
         h2 {
-            font-weight: 70;
-            font-size: 36px;
+            margin-block-end: 0;
+            font-weight: 700;
+            font-size: 1.7rem;
         }
 
         img {
